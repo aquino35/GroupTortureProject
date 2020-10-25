@@ -1,0 +1,173 @@
+------------------------------------------
+            START OF SIMULATION           
+------------------------------------------
+Hello Yousef :'))) 
+The order of the following network is:  [clk0, Const1, Const2, Inverter1, AND1, AND2, OR1, OR2, Mux1, OR3, Switch1, clk1, USR1] 
+------------------------------------------
+------------------------------------------
+Run no.0 
+------------------------------------------
+------------------------------------------
+Run no.1 
+------------------------------------------
+Const1 output: 1
+Const1 output: 1
+Const2 output: 1
+Const2 output: 1
+clk0 output: 1
+Const1 output: 1
+Const2 output: 1
+Inverter1 output: 0
+Const1 output: 1
+AND2 output: 0
+AND1 output: 1
+OR1 output: 1
+OR1 output: 1
+OR2 output: 1
+Const2 output: 1
+Mux1 output: 0
+OR2 output: 1
+AND2 output: 0
+Const1 output: 1
+------------------------------------------
+------------------------------------------
+Run no.2 
+------------------------------------------
+Const1 output: 1
+Const1 output: 1
+Const2 output: 1
+Const2 output: 1
+clk0 output: 1
+Const1 output: 1
+Const2 output: 1
+Inverter1 output: 0
+Const1 output: 1
+AND2 output: 0
+AND1 output: 1
+OR1 output: 1
+OR1 output: 1
+OR2 output: 1
+Const2 output: 1
+Mux1 output: 0
+OR2 output: 1
+AND2 output: 0
+Const1 output: 1
+------------------------------------------
+------------------------------------------
+Run no.3 
+------------------------------------------
+Const1 output: 1
+Const1 output: 1
+Const2 output: 1
+Const2 output: 1
+clk0 output: 1
+Const1 output: 1
+Const2 output: 1
+Inverter1 output: 0
+Const1 output: 1
+AND2 output: 0
+AND1 output: 1
+OR1 output: 1
+OR1 output: 1
+OR2 output: 1
+Const2 output: 1
+Mux1 output: 0
+OR2 output: 1
+AND2 output: 0
+Const1 output: 1
+------------------------------------------
+------------------------------------------
+Run no.4 
+------------------------------------------
+Const1 output: 1
+Const1 output: 1
+Const2 output: 1
+Const2 output: 1
+clk0 output: 1
+Const1 output: 1
+Const2 output: 1
+Inverter1 output: 0
+Const1 output: 1
+AND2 output: 0
+AND1 output: 1
+OR1 output: 1
+OR1 output: 1
+OR2 output: 1
+Const2 output: 1
+Mux1 output: 0
+OR2 output: 1
+AND2 output: 0
+Const1 output: 1
+------------------------------------------
+------------------------------------------
+Run no.5 
+------------------------------------------
+Const1 output: 1
+Const1 output: 1
+Const2 output: 1
+Const2 output: 1
+clk0 output: 1
+Const1 output: 1
+Const2 output: 1
+Inverter1 output: 0
+Const1 output: 1
+AND2 output: 0
+AND1 output: 1
+OR1 output: 1
+OR1 output: 1
+OR2 output: 1
+Const2 output: 1
+Mux1 output: 0
+OR2 output: 1
+AND2 output: 0
+Const1 output: 1
+------------------------------------------
+------------------------------------------
+Run no.6 
+------------------------------------------
+Const1 output: 1
+Const1 output: 1
+Const2 output: 1
+Const2 output: 1
+clk0 output: 1
+Const1 output: 1
+Const2 output: 1
+Inverter1 output: 0
+Const1 output: 1
+AND2 output: 0
+AND1 output: 1
+OR1 output: 1
+OR1 output: 1
+OR2 output: 1
+Const2 output: 1
+Mux1 output: 0
+OR2 output: 1
+AND2 output: 0
+Const1 output: 1
+------------------------------------------
+------------------------------------------
+Run no.7 
+------------------------------------------
+Const1 output: 1
+Const1 output: 1
+Const2 output: 1
+Const2 output: 1
+clk0 output: 1
+Const1 output: 1
+Const2 output: 1
+Inverter1 output: 0
+Const1 output: 1
+AND2 output: 0
+AND1 output: 1
+OR1 output: 1
+OR1 output: 1
+OR2 output: 1
+Const2 output: 1
+Mux1 output: 0
+OR2 output: 1
+AND2 output: 0
+Const1 output: 1
+------------------------------------------
+------------------------------------------
+            END OF SIMULATION             
+------------------------------------------
