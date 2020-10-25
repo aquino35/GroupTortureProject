@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Oct 25  18:50:14 2020
+
+@author: osvaldo
+"""
+
 from unittest import TestCase
 from GroupTortureProject.Components.Switch import switch
 test = switch ("Switch")

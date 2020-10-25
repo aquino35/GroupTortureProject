@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Oct 24  18:50:14 2020
+
+@author: osvaldo
+"""
+
+
 from unittest import TestCase
 
 #from Inverter import *
@@ -13,7 +22,7 @@ from GroupTortureProject.Components.Switch import switch
 from GroupTortureProject.Components.USR import usr
 from GroupTortureProject.System.digitalSystem import DigitalSystem
 
-w = clock("clock0", 1)
+w = clock("clk0", 1)
 a = const("Const1", 1)
 b = const("Const2", 1)
 c = Inverter("Inverter1")
@@ -24,7 +33,7 @@ g = Gates("OR1", "OR")
 h = Gates("OR2", "OR")
 i = Mux("Mux1")
 j = Gates("OR3", "OR")
-k = clock("clock1", 1)
+k = clock("clk1", 1)
 l = usr("USR1",k.result,[1,1,1,1]) #Supposed to print whats in the register
 
 IO_dict = { w:[],a:[],b:[],c: [a], e:[w, a], f:[b, c],
@@ -42,7 +51,7 @@ IO_test = {"a":[],"b":[],"c":[],"d":["a","b","c","b","a"],"e":["b","a","c","b","
 
 class TestDigitalSystem(TestCase):
     def test_organize(self):
-        Test_Sys = DigitalSystem(IO_dict,network_list, 4)
+        Test_Sys = DigitalSystem(IO_dict,network_list, 7)
         Test_Sys.organize(IO_dict)
         print(Test_Sys.order)
 
