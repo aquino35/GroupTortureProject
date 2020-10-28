@@ -6,7 +6,7 @@ Created on Sun Oct 25  18:50:14 2020
 @author: osvaldo
 """
 from unittest import TestCase
-from GroupTortureProject.Components.Gates import Gates
+from Components.Gates import Gates
 
 
 class TestGates(TestCase):

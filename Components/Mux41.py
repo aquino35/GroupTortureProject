@@ -4,7 +4,7 @@ Created on Wed Sep  9 22:58:59 2020
 
 @author: juang
 """
-from GroupTortureProject.Components.Init import Init
+from Components.Init import Init
 
 
 class Mux(Init):

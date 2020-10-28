@@ -8,7 +8,7 @@ Created on Sun Oct 25 20:38:35 2020
 from unittest import TestCase
 from GroupTortureProject.Components.Mux41 import Mux
 
-#this test case still needs some work
+
 
 class TestMux(TestCase):
     def test_output(self):

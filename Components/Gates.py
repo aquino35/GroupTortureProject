@@ -27,7 +27,7 @@ Like for example:
            ^
     result = 1
 '''''
-from GroupTortureProject.Components.Init import Init
+from Components.Init import Init
 
 
 class Gates(Init):
