@@ -26,8 +26,8 @@ class DigitalSystem():
     run all of our components and create a network System.
     """
 
-    def __init__(self, layered_comp_list, parent_child_dict, num_of_runs):
-        self.network_list = parent_child_dict  # layered component list
+    def __init__(self, layered_comp_list, num_of_runs):
+        #self.network_list = parent_child_dict  # layered component list
         self.IO_dict = layered_comp_list  # parent and child are terms associated with graphs.
         self.run_max = num_of_runs + 1
         self.textFile = open('demo.txt', 'w') # initiating textfile describing the what happens in between runs.
@@ -39,6 +39,7 @@ class DigitalSystem():
         for dig_comp in self.IO_dict.keys(): # Initiating each dig comp with the attribute visited
             self.visited[dig_comp] = False
         self.organize(self.IO_dict)
+        self.network_list = self.IO_dict
         #print(self.order)
         self.Run()
 
@@ -80,20 +81,18 @@ class DigitalSystem():
             self.textFile.writelines("------------------------------------------\n")
             self.textFile.writelines(f'Run no.{run_count} \n')
             self.textFile.writelines("------------------------------------------\n")
-            for layer in range(len(self.network_list)):
-                for dig_comp in self.network_list[layer]:  # dig_comp = digital component
-                    input_list = []
-                    for dig_comp_in in self.IO_dict[dig_comp]: # This loops gathers the necessary inputs for the current component
-                        if isinstance(dig_comp_in, usr):
-                            input_list.append(dig_comp_in.output())
-                            self.textFile.writelines(f'{dig_comp_in.name} registers: {dig_comp_in.interior_seq}\n')
-                            self.textFile.writelines(f'{dig_comp_in.name} output: {dig_comp_in.output()}\n')
-                        else:
-                            input_list.append(dig_comp_in.output())
-                            self.textFile.writelines(f'{dig_comp_in.name} output: {dig_comp_in.output()}\n')
-
-                        #self.textFile.writelines(f'{dig_comp_in.name} output: {dig_comp_in.result}\n')
-                    dig_comp.Output(input_list)
+            for dig_comp in self.network_list:  # dig_comp = digital component
+                input_list = []
+                for dig_comp_in in self.IO_dict[dig_comp]: # This loops gathers the necessary inputs for the current component
+                    if isinstance(dig_comp_in, usr):
+                        input_list.append(dig_comp_in.output())
+                        self.textFile.writelines(f'{dig_comp_in.name} registers: {dig_comp_in.interior_seq}\n')
+                        self.textFile.writelines(f'{dig_comp_in.name} output: {dig_comp_in.output()}\n')
+                    else:
+                        input_list.append(dig_comp_in.output())
+                        self.textFile.writelines(f'{dig_comp_in.name} output: {dig_comp_in.output()}\n')
+                    #self.textFile.writelines(f'{dig_comp_in.name} output: {dig_comp_in.result}\n')
+                dig_comp.Output(input_list)
             run_count += 1
             self.textFile.writelines("------------------------------------------\n")
         self.textFile.writelines("------------------------------------------\n")

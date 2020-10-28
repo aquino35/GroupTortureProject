@@ -74,7 +74,7 @@ class Test1(TestCase):
         IO_dict = {w: [], a: [], b: [], c: [a], e: [w, a], f: [b, c],
                    g: [a, f], h: [e, g], i: [g, h, b], j: [i, h], d: [a, b, b], k: [], l: [e, b], m: [l, w]}
         network_list = [[w], [a], [b], [c], [d], [e], [f], [g], [h], [i], [j], [k], [l], [m]]  # Each component of the list represents a layer with the components that are inside of that layer.
-        Test_Sys = DigitalSystem(IO_dict,network_list, 4)
+        Test_Sys = DigitalSystem(IO_dict,network_list, 2)
         Test_Sys.organize(IO_dict)
         print(Test_Sys.order)
         #print(d.__doc__)
