@@ -30,13 +30,13 @@ class DigitalSystem():
         self.network_list = parent_child_dict  # layered component list
         self.IO_dict = layered_comp_list  # parent and child are terms associated with graphs.
         self.run_max = num_of_runs + 1
-        self.textFile = open('demo.txt', 'w') #initiating textfile describing the what happens in between runs.
+        self.textFile = open('demo.txt', 'w') # initiating textfile describing the what happens in between runs.
         self.output = []
         self.order = []
         self.visited = {}  # A dictionary that takes note of dig comps visted
         # True -> a node has been visited
         # False -> a node has not been visited
-        for dig_comp in self.IO_dict.keys(): #Initiating each dig comp with the attribute visited
+        for dig_comp in self.IO_dict.keys(): # Initiating each dig comp with the attribute visited
             self.visited[dig_comp] = False
         self.organize(self.IO_dict)
         #print(self.order)
@@ -60,7 +60,7 @@ class DigitalSystem():
         dig_comp (component): a component inside the network to be evaluated.
         """
         self.visited[dig_comp] = True  # base case
-        for dig_comp_in in self.IO_dict[dig_comp]:  # We traverse each node inside the connection dictionary that is given
+        for dig_comp_in in self.IO_dict[dig_comp]:  #  We traverse each node inside the connection dictionary that is given
             if not self.visited[dig_comp]:
                 self.traverse(dig_comp_in)
         self.order.append(dig_comp)

@@ -11,13 +11,11 @@ class Mux(Init):
 
     def __init__(self, name):
         super().__init__(name)
-        self.result = 0
 
     def Output(self, inputs):
 
         self.inputs = inputs[0:4]
         self.inputs_sec = inputs[4:6]
-        self.result = 0
         # since it will save all he inputs as one, the important thing is to
         # select the values inside depending on the selected input_sec
         # which will simulate as the selection of the multiplexer
