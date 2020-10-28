@@ -45,7 +45,11 @@ class usr(Init):
             elif(method>2):
                 #raise Exception("The function is not valid")
                 raise ValueError("The function is not valid")
+        return self.result
+
 
     def shift_serial(self, input1, input2):
         input1.insert(0, input2)
         self.result = input1.pop()
+
+

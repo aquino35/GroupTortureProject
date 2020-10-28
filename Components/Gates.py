@@ -1,36 +1,33 @@
 # -*- coding: utf-8 -*-
-
-''''
-This is a class were it will get the components desired
-AND [001]
-OR  [011]
-XOR [010]
-NAND [110]
-NOR [100]
-With the corresponding values of each one
-By using a list we can manipulate the truth talble to our advantge
-In this case it will sum the values of the inputs and will give the 
-result of the component using the list truth table 
-Like for example:
-    AND(1,1) === input1 + input2 = 2
-    call the list
-    AND [0 0 1]
-         0 1 2
-             ^
-    result = 1
-
-    or 
-
-    XOR(1,0) === input1 + input2 = 1
-    XOR [0 1 0]
-         0 1 2
-           ^
-    result = 1
-'''''
 from GroupTortureProject.Components.Init import Init
-
-
 class Gates(Init):
+    """
+    This is the digital Gate component class. Its job simulate the components:
+                    AND [001]
+                    OR  [011]
+                    XOR [010]
+                    NAND [110]
+                    NOR [100]
+    With the corresponding values of each one
+    By using a list we can manipulate the truth table to our advantage
+    In this case it will sum the values of the inputs and will give the
+    result of the component using the list truth table
+    Like for example:
+        AND(1,1) === input1 + input2 = 2
+        call the list
+        AND [0 0 1]
+             0 1 2
+                 ^
+        result = 1
+
+        or
+
+        XOR(1,0) === input1 + input2 = 1
+        XOR [0 1 0]
+             0 1 2
+               ^
+        result = 1
+    """
 
     def __init__(self, name, gates):
         super().__init__(name)
@@ -55,8 +52,4 @@ class Gates(Init):
             Gates.initialized = None
             Gates.Truth_Table = {"AND": [0, 0, 1], "OR": [0, 1, 1], "XOR": [0, 1, 0], "NAND": [1, 1, 0],
                                  "NOR": [1, 0, 0]}
-
-    def output(self):
-        final_value = self.result
-        return final_value
 

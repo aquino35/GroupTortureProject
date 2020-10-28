@@ -12,8 +12,8 @@ Created on Fri Oct  9 18:50:14 2020
 # from digitalSystem import *
 
 #Importing the components of the digital system
-from GroupTortureProject.Components.const import const
-from GroupTortureProject.Components.clock import clock
+from GroupTortureProject.Components.Constant import const
+from GroupTortureProject.Components.Clock import clock
 from GroupTortureProject.Components.Gates import Gates
 from GroupTortureProject.Components.Inverter import Inverter
 from GroupTortureProject.Components.Mux41 import Mux
@@ -84,8 +84,14 @@ class DigitalSystem():
                 for dig_comp in self.network_list[layer]:  # dig_comp = digital component
                     input_list = []
                     for dig_comp_in in self.IO_dict[dig_comp]: # This loops gathers the necessary inputs for the current component
-                        input_list.append(dig_comp_in.output())
-                        self.textFile.writelines(f'{dig_comp_in.name} output: {dig_comp_in.output()}\n')
+                        if isinstance(dig_comp_in, usr):
+                            input_list.append(dig_comp_in.output())
+                            self.textFile.writelines(f'{dig_comp_in.name} registers: {dig_comp_in.interior_seq}\n')
+                            self.textFile.writelines(f'{dig_comp_in.name} output: {dig_comp_in.output()}\n')
+                        else:
+                            input_list.append(dig_comp_in.output())
+                            self.textFile.writelines(f'{dig_comp_in.name} output: {dig_comp_in.output()}\n')
+
                         #self.textFile.writelines(f'{dig_comp_in.name} output: {dig_comp_in.result}\n')
                     dig_comp.Output(input_list)
             run_count += 1

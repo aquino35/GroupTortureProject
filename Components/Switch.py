@@ -43,10 +43,3 @@ class switch(Init):
         else:
             raise Exception("error, inputs are not valued well")
 
-    def output(self):
-        output1 = self.result
-        return output1
-
-
-
-

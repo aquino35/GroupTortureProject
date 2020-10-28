@@ -14,3 +14,12 @@ class Init:
 
     def __repr__(self):
         return self.name
+
+    def Output(self,output1):
+        output1 = self.result
+        return output1
+
+    def output(self):
+        output1 = self.result
+        return output1
+

@@ -9,16 +9,10 @@ from GroupTortureProject.Components.Init import Init
 
 
 class const(Init):
-    # pass
+    """
+    This is the constant digital component. This class will take a given
+    input an return the same value.
+    """
     def __init__(self, name,result):
         super().__init__(name)
         self.result = result
-
-    def output(self):
-        output1 = self.result
-        return output1
-
-    def Output(self,output1):
-        output1 = self.result
-        return output1
-

@@ -16,14 +16,6 @@ class clock(Init):
         self.result = int(not (self.result))
         return self.result
 
-    def Output(self,output1):
-        output1 = self.result
-        return output1
-    def output(self):
-        final_value = self.result
-        return final_value
-
-
 
 
 
