@@ -4,7 +4,7 @@ Created on Mon Oct 12 16:15:21 2020
 
 @author: juang
 """
-from GroupTortureProject.Components.BaseComponent import BaseComponent
+from Components.BaseComponent import BaseComponent
 
 class switch(BaseComponent):
 
@@ -27,18 +27,23 @@ class switch(BaseComponent):
         self.input1 = inputs[0]
         self.input2 = inputs[1]
         self.switch_state = inputs[2]
-        self.result = self.memories
+        self.flashback = self.memories
         self.memories = inputs
 
         if self.switch_state == 0:
             if self.input1 == None:
-                return self.result[0]
+                self.result = self.flashback[0]
+                return  self.flashback[0]
+
             else:
+                self.result =self.input1
                 return self.input1
         elif self.switch_state == 1:
             if self.input2 == None:
-                return self.result[1]
+                self.resut=self.flashback[1]
+                return self.flashback[1]
             else:
+                self.result = self.input2
                 return self.input2
         else:
             raise Exception("error, inputs are not valued well")

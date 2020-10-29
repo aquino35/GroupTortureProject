@@ -4,7 +4,7 @@ Created on Sat Sep 26 19:54:43 2020
 
 @author: aespi
 """
-from GroupTortureProject.Components.BaseComponent import BaseComponent
+from Components.BaseComponent import BaseComponent
 
 
 class clock(BaseComponent):
@@ -14,10 +14,9 @@ class clock(BaseComponent):
         # self.Output()
         self.result = input
 
-    def Output(self,input1):
-        self.result = int(not (input))
+    def Output(self,input):
+        self.result = int(not (self.result))
         return self.result
-
 
 
 

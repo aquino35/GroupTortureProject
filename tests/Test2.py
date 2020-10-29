@@ -1,12 +1,12 @@
 from unittest import TestCase
-from GroupTortureProject.Components.Clock import clock
-from GroupTortureProject.Components.Constant import const
-from GroupTortureProject.Components.Gates import Gates
-from GroupTortureProject.Components.Inverter import Inverter
-from GroupTortureProject.Components.Mux41 import Mux
-from GroupTortureProject.Components.Switch import switch
-from GroupTortureProject.Components.USR import usr
-from GroupTortureProject.System.logicCircuitSystem import LogicCircuitSystem
+from Components.Clock import clock
+from Components.Constant import const
+from Components.Gates import Gates
+from Components.Inverter import Inverter
+from Components.Mux41 import Mux
+from Components.Switch import switch
+from Components.USR import usr
+from System.logicCircuitSystem import LogicCircuitSystem
 
 
 class Test2(TestCase):
@@ -56,8 +56,8 @@ class Test2(TestCase):
 
     def test_Sys(self):  # this test creates a textfile that Simulates the System.
 
-        a = const("Cnst1", 0)
-        b = const("Cnst2", 1)
+        a = const("Cnst1", 1)
+        b = const("Cnst2", 0)
         c = clock("clk0", 1)
         d = usr("USR1", [0, 1, 0, 0])
         e = usr("USR2", [1, 0, 1, 0])
@@ -66,17 +66,19 @@ class Test2(TestCase):
         h = Gates("OR1", "OR")
         i = usr("USR3")
         j = Mux("Mux0")
+        k = Gates("OR2", "OR")
 
         connection_dict = {a: [],
                            b: [],
                            c: [],
-                           d: [a, a, c, b, a, b, a, c],
-                           e: [b, c, a, b, a, a, a, c],
-                           f: [b, d],
+                           d: [a, a, b, b, a, b, a, c],
+                           e: [b, b, a, b, a, a, a, c],
+                           f: [a, a],
                            g: [c, b],
                            h: [f, g],
-                           i: [a, b, c, b, a, h, b, c],
+                           i: [a, b, b, b, a, h, b, c],
                            j: [c, a, i]}
+                          # k:[b,i]}
 
         Test_Sys = LogicCircuitSystem(connection_dict, 7)
         print(Test_Sys.network_dict)

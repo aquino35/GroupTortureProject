@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from GroupTortureProject.Components.BaseComponent import BaseComponent
+from Components.BaseComponent import BaseComponent
 class Gates(BaseComponent):
     """
     This is the digital Gate component class. Its job simulate the components:
@@ -37,7 +37,7 @@ class Gates(BaseComponent):
         self.InitiateGate()
 
     def Output(self, inputs):
-        if not self.result == None:
+        #if not self.result == None:
             self.checkInputErrors(inputs)
             # This will return the value of the desired component from the inputs placed
             result = Gates.Truth_Table[self.gates][inputs[0] + inputs[1]]
@@ -68,3 +68,5 @@ class Gates(BaseComponent):
             Gates.Truth_Table = {"AND": [0, 0, 1], "OR": [0, 1, 1], "XOR": [0, 1, 0], "NAND": [1, 1, 0],
                                  "NOR": [1, 0, 0]}
 
+    def output(self):
+        return self.result
