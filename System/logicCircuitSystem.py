@@ -5,7 +5,6 @@ Created on Fri Oct  9 18:50:14 2020
 
 @author: osvaldo
 """
-
 class LogicCircuitSystem():
     """  This class is defined as The Logic Circuit System Simulator. Its job is to simulate a digital system that runs
     numerous amounts of connected components. The class needs a connection dictionary with the given components
@@ -70,7 +69,7 @@ class LogicCircuitSystem():
         for dig_comp in self.ordered_network_list:  # This nested loop gathers all initial values for the text file
             for dig_comp_in in self.network_dict[dig_comp]:
                 self.textFile.writelines(f'{dig_comp_in.name} output: {dig_comp_in.output()}\n')
-                self.textFile.writelines(f'\n')
+                #self.textFile.writelines(f'\n')
         self.textFile.writelines("-----------------------------------------------------------------------\n")
         run_count = 1
         while run_count != self.run_max:
@@ -82,7 +81,7 @@ class LogicCircuitSystem():
                     dig_comp]:  # This loops gathers the necessary inputs for the current component
                     input_list.append(dig_comp_in.result)
                     #self.textFile.writelines(f'{dig_comp_in.name} output: {dig_comp_in.output()}\n')
-                    self.textFile.writelines(f'\n')
+                    #self.textFile.writelines(f'\n')
                 dig_comp.Output(input_list)
                 self.textFile.writelines(f'{dig_comp.name} output: {dig_comp.output()}\n')
             run_count += 1

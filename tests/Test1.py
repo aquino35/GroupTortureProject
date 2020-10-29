@@ -32,15 +32,15 @@ class Test1(TestCase):
         xorGate.Output([1, 1])
         assert xorGate.result == 0, "The expected result was zero"
 
-        clck = clock("clck0",1)
-        usrObject = usr("usr0",clck,[1,1,1,1]) #usr obj
-        print(usrObject.__doc__) #printing USR documentation
-        usrObject.Output([1,1])
-        print("-------------")
-        print("the USR Shift" , usrObject.interior_seq)
-        print("The USR result is", usrObject.result)
-        print("-------------")
-        assert usrObject.result == 1, "The expected result was one"
+        # clck = clock("clck0",1)
+        # usrObject = usr("usr0",[1,1,1,1]) #usr obj
+        # print(usrObject.__doc__) #printing USR documentation
+        # usrObject.Output([1,1])
+        # print("-------------")
+        # print("the USR Shift" , usrObject.interior_seq)
+        # print("The USR result is", usrObject.result)
+        # print("-------------")
+        # assert usrObject.result == 1, "The expected result was one"
 
         muxObject = Mux("Mux0") #mux obj
         muxObject.Output([[10101],[1001],[110010],[10001010],1,1])
@@ -49,49 +49,42 @@ class Test1(TestCase):
     def test_operate(self): #testing the clck obj
         clockObject = clock("clck0", 0)
         clockObject.Output(0)
-        assert clockObject.result == 0, "The expected result was zero"
+        assert clockObject.result == 1, "The expected result was zero"
         clockObject1 = clock("clck0", 1)
         clockObject1.Output(1)
-        assert clockObject1.result == 1, "The expected result was one"
+        assert clockObject1.result == 0, "The expected result was one"
 
     def test_const(self): #testing const obj
         constantObj = const("cosnt0",133030303)
         assert constantObj.result ==133030303, "The expected result was zero"
 
-    def test_Sys(self): #this test creates a textfile that Simulates the System.
-        w = clock("clk0", 1)
-        a = const("Const1", 1)
-        b = const("Const2", 0)
-        c = Inverter("Inverter1")
-        #d = switch("Switch1") #d: [a, b, b]
-        d = usr("USR0", w.result, [w, a, b, c])  # Supposed to print whats in the register
-        e = Gates("AND1", "AND")  # Constant output object
-        f = usr("USR1", w.result, [b, w, c, c])  # Supposed to print whats in the register
-        g = Gates("OR1", "OR")
-        i = Mux("Mux1")
-        j = Gates("OR2", "OR")
-        k = clock("clk1", 1)
-        l = usr("USR2", k.result, [1, 1, 0, 1])  # Supposed to print whats in the register
-        IO_dict = {
-                   c: [a,w],
-                   e: [w, a],
-                   g: [a, a],
-                   j: [w, b],
-                   k: [],
-                   l: [e, b, w, a, b],
-                   d: [a, c, i, k, w],
-                   f: [e, g, l, d, a],
-                   w: [],
-                   a: [],
-                   b: [],
-                   i: [g, e, b]}
-        Test_Sys = LogicCircuitSystem(IO_dict, 7)
-        print(Test_Sys.network_dict)
-        #print(d.__doc__)
-        # print(Test_Sys.__doc__)
-        # print(Test_Sys.traverse.__doc__)
-        # print(Test_Sys.organize.__doc__)
+    def test_Sys(self):  # this test creates a textfile that Simulates the System.
 
+        a = const("Cnst1", 0)
+        b = const("Cnst2", 1)
+        c = clock("clk0", 1)
+        d = usr("USR1", [0, 0, 0, 0])
+        e = usr("USR2", [1, 1, 1, 0])
+        f = Gates("AND1", "AND")
+        g = Gates("AND2", "AND")
+        h = Gates("OR1", "OR")
+        i = usr("USR3")
+        # j = Mux("Mux0")
+        # k = Gates("OR2", "OR")
+
+        connection_dict = {a: [],
+                           b: [],
+                           c: [],
+                           d: [a, b, c, b, a, a, c, c],
+                           e: [b, a, c, b, a, b, a, c],
+                           f: [b, a],
+                           g: [a, b],
+                           h: [a, c],
+                           i: [a, b, c, b, a, h, b, a, c]}
+
+
+        Test_Sys = LogicCircuitSystem(connection_dict, 7)
+        print(Test_Sys.network_dict)
 
 
 

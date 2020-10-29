@@ -1,4 +1,4 @@
-from Components.BaseComponent import BaseComponent
+from GroupTortureProject.Components.BaseComponent import BaseComponent
 
 
 class usr(BaseComponent):
