@@ -1,173 +1,563 @@
-------------------------------------------
-            START OF SIMULATION           
-------------------------------------------
-Hello Yousef :'))) 
-The order of the following network is:  [clk0, Const1, Const2, Inverter1, AND1, AND2, OR1, OR2, Mux1, OR3, Switch1, clk1, USR1] 
-------------------------------------------
-------------------------------------------
-Run no.0 
-------------------------------------------
-------------------------------------------
-Run no.1 
-------------------------------------------
-Const1 output: 1
-Const1 output: 1
-Const2 output: 1
-Const2 output: 1
+Welcome to the text file of the Digital Circuit System simulator. 
+This is a Simulation of 7 runs of the System.  
+
+The order of the following network is: 
+[Cnst1, Cnst2, clk0, USR1, USR2, AND1, AND2, OR1, USR3, Mux0] 
+
+-----------------------------------------------------------------------
+                         START OF SIMULATION           
+-----------------------------------------------------------------------
+Run 0: 
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
 clk0 output: 1
-Const1 output: 1
-Const2 output: 1
-Inverter1 output: 0
-Const1 output: 1
-AND2 output: 0
-AND1 output: 1
-OR1 output: 1
-OR1 output: 1
-OR2 output: 1
-Const2 output: 1
-Mux1 output: 0
-OR2 output: 1
-AND2 output: 0
-Const1 output: 1
-------------------------------------------
-------------------------------------------
-Run no.2 
-------------------------------------------
-Const1 output: 1
-Const1 output: 1
-Const2 output: 1
-Const2 output: 1
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
 clk0 output: 1
-Const1 output: 1
-Const2 output: 1
-Inverter1 output: 0
-Const1 output: 1
-AND2 output: 0
-AND1 output: 1
-OR1 output: 1
-OR1 output: 1
-OR2 output: 1
-Const2 output: 1
-Mux1 output: 0
-OR2 output: 1
-AND2 output: 0
-Const1 output: 1
-------------------------------------------
-------------------------------------------
-Run no.3 
-------------------------------------------
-Const1 output: 1
-Const1 output: 1
-Const2 output: 1
-Const2 output: 1
+
+Cnst2 output: 1
+
 clk0 output: 1
-Const1 output: 1
-Const2 output: 1
-Inverter1 output: 0
-Const1 output: 1
-AND2 output: 0
-AND1 output: 1
-OR1 output: 1
-OR1 output: 1
-OR2 output: 1
-Const2 output: 1
-Mux1 output: 0
-OR2 output: 1
-AND2 output: 0
-Const1 output: 1
-------------------------------------------
-------------------------------------------
-Run no.4 
-------------------------------------------
-Const1 output: 1
-Const1 output: 1
-Const2 output: 1
-Const2 output: 1
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
 clk0 output: 1
-Const1 output: 1
-Const2 output: 1
-Inverter1 output: 0
-Const1 output: 1
-AND2 output: 0
-AND1 output: 1
-OR1 output: 1
-OR1 output: 1
-OR2 output: 1
-Const2 output: 1
-Mux1 output: 0
-OR2 output: 1
-AND2 output: 0
-Const1 output: 1
-------------------------------------------
-------------------------------------------
-Run no.5 
-------------------------------------------
-Const1 output: 1
-Const1 output: 1
-Const2 output: 1
-Const2 output: 1
+
+Cnst2 output: 1
+
+USR1 output: (None, 'Current Registry:', [0, 1, 0, 0])
+
 clk0 output: 1
-Const1 output: 1
-Const2 output: 1
-Inverter1 output: 0
-Const1 output: 1
-AND2 output: 0
-AND1 output: 1
-OR1 output: 1
-OR1 output: 1
-OR2 output: 1
-Const2 output: 1
-Mux1 output: 0
-OR2 output: 1
-AND2 output: 0
-Const1 output: 1
-------------------------------------------
-------------------------------------------
-Run no.6 
-------------------------------------------
-Const1 output: 1
-Const1 output: 1
-Const2 output: 1
-Const2 output: 1
+
+Cnst2 output: 1
+
+AND1 output: None
+
+AND2 output: None
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
 clk0 output: 1
-Const1 output: 1
-Const2 output: 1
-Inverter1 output: 0
-Const1 output: 1
-AND2 output: 0
-AND1 output: 1
-OR1 output: 1
-OR1 output: 1
-OR2 output: 1
-Const2 output: 1
-Mux1 output: 0
-OR2 output: 1
-AND2 output: 0
-Const1 output: 1
-------------------------------------------
-------------------------------------------
-Run no.7 
-------------------------------------------
-Const1 output: 1
-Const1 output: 1
-Const2 output: 1
-Const2 output: 1
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+OR1 output: None
+
+Cnst2 output: 1
+
 clk0 output: 1
-Const1 output: 1
-Const2 output: 1
-Inverter1 output: 0
-Const1 output: 1
-AND2 output: 0
-AND1 output: 1
-OR1 output: 1
-OR1 output: 1
-OR2 output: 1
-Const2 output: 1
-Mux1 output: 0
-OR2 output: 1
-AND2 output: 0
-Const1 output: 1
-------------------------------------------
-------------------------------------------
-            END OF SIMULATION             
-------------------------------------------
+
+clk0 output: 1
+
+Cnst1 output: 0
+
+USR3 output: (None, 'Current Registry:', [None, None, None, None])
+
+-----------------------------------------------------------------------
+Run: 1 
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+clk0 output: 0
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+USR1 output: (None, 'Current Registry:', [0, 1, 0, 0])
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+AND1 output: None
+
+AND2 output: None
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+OR1 output: None
+
+Cnst2 output: 1
+
+clk0 output: 0
+
+clk0 output: 0
+
+Cnst1 output: 0
+
+USR3 output: (None, 'Current Registry:', [None, None, None, None])
+
+-----------------------------------------------------------------------
+Run: 2 
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+clk0 output: 0
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+USR1 output: (None, 'Current Registry:', [0, 1, 0, 0])
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+AND1 output: None
+
+AND2 output: None
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+OR1 output: None
+
+Cnst2 output: 1
+
+clk0 output: 0
+
+clk0 output: 0
+
+Cnst1 output: 0
+
+USR3 output: (None, 'Current Registry:', [None, None, None, None])
+
+-----------------------------------------------------------------------
+Run: 3 
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+clk0 output: 0
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+USR1 output: (None, 'Current Registry:', [0, 1, 0, 0])
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+AND1 output: None
+
+AND2 output: None
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+OR1 output: None
+
+Cnst2 output: 1
+
+clk0 output: 0
+
+clk0 output: 0
+
+Cnst1 output: 0
+
+USR3 output: (None, 'Current Registry:', [None, None, None, None])
+
+-----------------------------------------------------------------------
+Run: 4 
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+clk0 output: 0
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+USR1 output: (None, 'Current Registry:', [0, 1, 0, 0])
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+AND1 output: None
+
+AND2 output: None
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+OR1 output: None
+
+Cnst2 output: 1
+
+clk0 output: 0
+
+clk0 output: 0
+
+Cnst1 output: 0
+
+USR3 output: (None, 'Current Registry:', [None, None, None, None])
+
+-----------------------------------------------------------------------
+Run: 5 
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+clk0 output: 0
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+USR1 output: (None, 'Current Registry:', [0, 1, 0, 0])
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+AND1 output: None
+
+AND2 output: None
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+OR1 output: None
+
+Cnst2 output: 1
+
+clk0 output: 0
+
+clk0 output: 0
+
+Cnst1 output: 0
+
+USR3 output: (None, 'Current Registry:', [None, None, None, None])
+
+-----------------------------------------------------------------------
+Run: 6 
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+clk0 output: 0
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+USR1 output: (None, 'Current Registry:', [0, 1, 0, 0])
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+AND1 output: None
+
+AND2 output: None
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+OR1 output: None
+
+Cnst2 output: 1
+
+clk0 output: 0
+
+clk0 output: 0
+
+Cnst1 output: 0
+
+USR3 output: (None, 'Current Registry:', [None, None, None, None])
+
+-----------------------------------------------------------------------
+Run: 7 
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+clk0 output: 0
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+Cnst1 output: 0
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+USR1 output: (None, 'Current Registry:', [0, 1, 0, 0])
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+AND1 output: None
+
+AND2 output: None
+
+Cnst1 output: 0
+
+Cnst2 output: 1
+
+clk0 output: 0
+
+Cnst2 output: 1
+
+Cnst1 output: 0
+
+OR1 output: None
+
+Cnst2 output: 1
+
+clk0 output: 0
+
+clk0 output: 0
+
+Cnst1 output: 0
+
+USR3 output: (None, 'Current Registry:', [None, None, None, None])
+
+-----------------------------------------------------------------------
+                         END OF SIMULATION             
+-----------------------------------------------------------------------

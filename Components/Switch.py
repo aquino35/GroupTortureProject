@@ -4,9 +4,9 @@ Created on Mon Oct 12 16:15:21 2020
 
 @author: juang
 """
-from GroupTortureProject.Components.Init import Init
+from GroupTortureProject.Components.BaseComponent import BaseComponent
 
-class switch(Init):
+class switch(BaseComponent):
 
     '''
     This component is a switch were it receives three inputs
@@ -31,22 +31,15 @@ class switch(Init):
         self.memories = inputs
 
         if self.switch_state == 0:
-            if self.input1 is None:
+            if self.input1 == None:
                 return self.result[0]
             else:
                 return self.input1
         elif self.switch_state == 1:
-            if self.input2 is None:
+            if self.input2 == None:
                 return self.result[1]
             else:
                 return self.input2
         else:
             raise Exception("error, inputs are not valued well")
-
-    def output(self):
-        output1 = self.result
-        return output1
-
-
-
 
