@@ -31,10 +31,13 @@ class Gates(Init):
 
     def __init__(self, name, gates):
         super().__init__(name)
+        self.checked = False
         self.gates = gates
-        self.InitiateGate()
+        self.checkInputErrors(gates)
+        self.__InitiateGate()
 
     def Output(self, inputs):
+        self.checkInputErrors(inputs)
         # This will return the value of the desired component from the inputs placed
         result = Gates.Truth_Table[self.gates][inputs[0] + inputs[1]]
         # For the and, or , xor gates, for more than two inputs, used this lopp to calculate the
@@ -44,10 +47,21 @@ class Gates(Init):
         self.result = result
         return result
 
+    def checkInputErrors(self, inputs):
+        # Checks once if the gate has the correct amount of inputs
+        if not self.checked:
+            length = len(inputs)
+            if length == 1:
+                raise Exception("A Gate object must have 2 or more inputs")
+            # elif length > 2 and self.gates in ["NAND", "NOR"]:
+            #     raise Exception(f'"{self.name}", which is a {self.gates} gate, cannot receive more than two inputs.')
+            else:
+                self.checked = True
+
     # This will help initiate this class with the corresponding components and
     # Values of the truth table of each one
     @staticmethod
-    def InitiateGate():
+    def __InitiateGate():
         if not hasattr(Gates, "initialized"):  # This initialization is only ran once for the class
             Gates.initialized = None
             Gates.Truth_Table = {"AND": [0, 0, 1], "OR": [0, 1, 1], "XOR": [0, 1, 0], "NAND": [1, 1, 0],

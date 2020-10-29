@@ -15,7 +15,6 @@ class Inverter(Init):
     """
     def __init__(self, name):
         super().__init__(name)
-        self.result = None
 
     def Output(self, input):
         self.result = int(not (input))

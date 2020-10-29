@@ -1,173 +1,483 @@
-------------------------------------------
-            START OF SIMULATION           
-------------------------------------------
-Hello Yousef :'))) 
-The order of the following network is:  [clk0, Const1, Const2, Inverter1, AND1, AND2, OR1, OR2, Mux1, OR3, clk1, USR1, NOR] 
-------------------------------------------
-------------------------------------------
-Run no.0 
-------------------------------------------
-------------------------------------------
-Run no.1 
-------------------------------------------
-Const1 output: 1
+Welcome to the text file of the Digital Circuit System simulator. 
+This is a Simulation of 7 runs of the System.  
+
+The order of the following network is: 
+[Switch1, clk0, USR3, Inv0, Const2, USR1, USR2, OR1, AND1, OR2, clk1, Const1, Mux1] 
+
+-----------------------------------------------------------------------
+                         START OF SIMULATION           
+-----------------------------------------------------------------------
+Run: 0 
+
+Const1 output: 0
+
+Const2 output: 1
+
+Const2 output: 1
+
+Inv0 output: None
+
 clk0 output: 1
-Const1 output: 1
+
+USR1 output: (None, 'Current Registry:', [0, 1, 0, 1])
+
 Const2 output: 1
-Inverter1 output: 0
-Const1 output: 1
-AND2 output: 0
-AND1 output: 1
-OR1 output: 1
-OR1 output: 1
-OR2 output: 1
+
+Const1 output: 0
+
+Inv0 output: None
+
+Const1 output: 0
+
+OR1 output: None
+
 Const2 output: 1
-Mux1 output: 0
-OR2 output: 1
-AND1 output: 1
+
+Const1 output: 0
+
 Const2 output: 1
-USR1 registers: [1, 0, 1, 1]
-USR1 output: 1
+
 clk0 output: 1
-------------------------------------------
-------------------------------------------
-Run no.2 
-------------------------------------------
-Const1 output: 1
+
+USR1 output: (None, 'Current Registry:', [0, 1, 0, 1])
+
+Const2 output: 1
+
+Const1 output: 0
+
+Const1 output: 0
+
+USR2 output: (None, 'Current Registry:', [1, 1, 1, 0])
+
+USR1 output: (None, 'Current Registry:', [0, 1, 0, 1])
+
+Const1 output: 0
+
+Const2 output: 1
+
+AND1 output: None
+
+Switch1 output: None
+
+AND1 output: None
+
+USR2 output: (None, 'Current Registry:', [1, 1, 1, 0])
+
+USR3 output: (None, 'Current Registry:', [1, 1, 0, 1])
+
+-----------------------------------------------------------------------
+Run: 1 
+
+Const1 output: 0
+
+Const2 output: 1
+
+Const2 output: 1
+
+Inv0 output: None
+
 clk0 output: 1
-Const1 output: 1
+
+USR1 output: (None, 'Current Registry:', [0, 1, 0, 1])
+
 Const2 output: 1
-Inverter1 output: 0
-Const1 output: 1
-AND2 output: 0
-AND1 output: 1
-OR1 output: 1
-OR1 output: 1
-OR2 output: 1
+
+Const1 output: 0
+
+Inv0 output: 1
+
+Const1 output: 0
+
+OR1 output: None
+
 Const2 output: 1
-Mux1 output: 0
-OR2 output: 1
-AND1 output: 1
+
+Const1 output: 0
+
 Const2 output: 1
-USR1 registers: [0, 1, 1, 1]
-USR1 output: 1
+
 clk0 output: 1
-------------------------------------------
-------------------------------------------
-Run no.3 
-------------------------------------------
-Const1 output: 1
+
+USR1 output: (1, 'Current Registry:', [1, 0, 1, 0])
+
+Const2 output: 1
+
+Const1 output: 0
+
+Const1 output: 0
+
+USR2 output: (1, 'Current Registry:', [1, 1, 0, 1])
+
+USR1 output: (1, 'Current Registry:', [1, 0, 1, 0])
+
+Const1 output: 0
+
+Const2 output: 1
+
+AND1 output: 0
+
+Switch1 output: ()
+
+AND1 output: 0
+
+USR2 output: (1, 'Current Registry:', [1, 1, 0, 1])
+
+USR3 output: (1, 'Current Registry:', [1, 0, 1, None])
+
+-----------------------------------------------------------------------
+Run: 2 
+
+Const1 output: 0
+
+Const2 output: 1
+
+Const2 output: 1
+
+Inv0 output: 1
+
 clk0 output: 1
-Const1 output: 1
+
+USR1 output: (1, 'Current Registry:', [1, 0, 1, 0])
+
 Const2 output: 1
-Inverter1 output: 0
-Const1 output: 1
-AND2 output: 0
-AND1 output: 1
+
+Const1 output: 0
+
+Inv0 output: 1
+
+Const1 output: 0
+
 OR1 output: 1
-OR1 output: 1
-OR2 output: 1
+
 Const2 output: 1
-Mux1 output: 0
-OR2 output: 1
-AND1 output: 1
+
+Const1 output: 0
+
 Const2 output: 1
-USR1 registers: [1, 1, 1, 1]
-USR1 output: 0
+
 clk0 output: 1
-------------------------------------------
-------------------------------------------
-Run no.4 
-------------------------------------------
-Const1 output: 1
+
+USR1 output: (0, 'Current Registry:', [1, 1, 0, 1])
+
+Const2 output: 1
+
+Const1 output: 0
+
+Const1 output: 0
+
+USR2 output: (1, 'Current Registry:', [1, 0, 1, 1])
+
+USR1 output: (0, 'Current Registry:', [1, 1, 0, 1])
+
+Const1 output: 0
+
+Const2 output: 1
+
+AND1 output: 0
+
+Switch1 output: [0, 1, 1]
+
+AND1 output: 0
+
+USR2 output: (1, 'Current Registry:', [1, 0, 1, 1])
+
+USR3 output: (1, 'Current Registry:', [0, 1, None, 1])
+
+-----------------------------------------------------------------------
+Run: 3 
+
+Const1 output: 0
+
+Const2 output: 1
+
+Const2 output: 1
+
+Inv0 output: 1
+
 clk0 output: 1
-Const1 output: 1
+
+USR1 output: (0, 'Current Registry:', [1, 1, 0, 1])
+
 Const2 output: 1
-Inverter1 output: 0
-Const1 output: 1
-AND2 output: 0
-AND1 output: 1
+
+Const1 output: 0
+
+Inv0 output: 1
+
+Const1 output: 0
+
 OR1 output: 1
-OR1 output: 1
-OR2 output: 1
+
 Const2 output: 1
-Mux1 output: 0
-OR2 output: 1
-AND1 output: 1
+
+Const1 output: 0
+
 Const2 output: 1
-USR1 registers: [1, 1, 1, 1]
-USR1 output: 1
+
 clk0 output: 1
-------------------------------------------
-------------------------------------------
-Run no.5 
-------------------------------------------
-Const1 output: 1
+
+USR1 output: (1, 'Current Registry:', [1, 1, 1, 0])
+
+Const2 output: 1
+
+Const1 output: 0
+
+Const1 output: 0
+
+USR2 output: (1, 'Current Registry:', [0, 1, 1, 1])
+
+USR1 output: (1, 'Current Registry:', [1, 1, 1, 0])
+
+Const1 output: 0
+
+Const2 output: 1
+
+AND1 output: 0
+
+Switch1 output: [0, 1, 1]
+
+AND1 output: 0
+
+USR2 output: (1, 'Current Registry:', [0, 1, 1, 1])
+
+USR3 output: (0, 'Current Registry:', [1, None, 1, 1])
+
+-----------------------------------------------------------------------
+Run: 4 
+
+Const1 output: 0
+
+Const2 output: 1
+
+Const2 output: 1
+
+Inv0 output: 1
+
 clk0 output: 1
-Const1 output: 1
+
+USR1 output: (1, 'Current Registry:', [1, 1, 1, 0])
+
 Const2 output: 1
-Inverter1 output: 0
-Const1 output: 1
-AND2 output: 0
-AND1 output: 1
+
+Const1 output: 0
+
+Inv0 output: 1
+
+Const1 output: 0
+
 OR1 output: 1
-OR1 output: 1
-OR2 output: 1
+
 Const2 output: 1
-Mux1 output: 0
-OR2 output: 1
-AND1 output: 1
+
+Const1 output: 0
+
 Const2 output: 1
-USR1 registers: [1, 1, 1, 1]
-USR1 output: 1
+
 clk0 output: 1
-------------------------------------------
-------------------------------------------
-Run no.6 
-------------------------------------------
-Const1 output: 1
+
+USR1 output: (0, 'Current Registry:', [1, 1, 1, 1])
+
+Const2 output: 1
+
+Const1 output: 0
+
+Const1 output: 0
+
+USR2 output: (0, 'Current Registry:', [1, 1, 1, 1])
+
+USR1 output: (0, 'Current Registry:', [1, 1, 1, 1])
+
+Const1 output: 0
+
+Const2 output: 1
+
+AND1 output: 0
+
+Switch1 output: [0, 1, 1]
+
+AND1 output: 0
+
+USR2 output: (0, 'Current Registry:', [1, 1, 1, 1])
+
+USR3 output: (1, 'Current Registry:', [None, 1, 1, 1])
+
+-----------------------------------------------------------------------
+Run: 5 
+
+Const1 output: 0
+
+Const2 output: 1
+
+Const2 output: 1
+
+Inv0 output: 1
+
 clk0 output: 1
-Const1 output: 1
+
+USR1 output: (0, 'Current Registry:', [1, 1, 1, 1])
+
 Const2 output: 1
-Inverter1 output: 0
-Const1 output: 1
-AND2 output: 0
-AND1 output: 1
-OR1 output: 1
-OR1 output: 1
-OR2 output: 1
+
+Const1 output: 0
+
+Inv0 output: 1
+
+Const1 output: 0
+
+OR1 output: 0
+
 Const2 output: 1
-Mux1 output: 0
-OR2 output: 1
-AND1 output: 1
+
+Const1 output: 0
+
 Const2 output: 1
-USR1 registers: [1, 1, 1, 1]
-USR1 output: 1
+
 clk0 output: 1
-------------------------------------------
-------------------------------------------
-Run no.7 
-------------------------------------------
-Const1 output: 1
+
+USR1 output: (1, 'Current Registry:', [1, 1, 1, 1])
+
+Const2 output: 1
+
+Const1 output: 0
+
+Const1 output: 0
+
+USR2 output: (1, 'Current Registry:', [1, 1, 1, 1])
+
+USR1 output: (1, 'Current Registry:', [1, 1, 1, 1])
+
+Const1 output: 0
+
+Const2 output: 1
+
+AND1 output: 0
+
+Switch1 output: [0, 1, 1]
+
+AND1 output: 0
+
+USR2 output: (1, 'Current Registry:', [1, 1, 1, 1])
+
+USR3 output: (None, 'Current Registry:', [1, 1, 1, 1])
+
+-----------------------------------------------------------------------
+Run: 6 
+
+Const1 output: 0
+
+Const2 output: 1
+
+Const2 output: 1
+
+Inv0 output: 1
+
 clk0 output: 1
-Const1 output: 1
+
+USR1 output: (1, 'Current Registry:', [1, 1, 1, 1])
+
 Const2 output: 1
-Inverter1 output: 0
-Const1 output: 1
-AND2 output: 0
-AND1 output: 1
+
+Const1 output: 0
+
+Inv0 output: 1
+
+Const1 output: 0
+
 OR1 output: 1
-OR1 output: 1
-OR2 output: 1
+
 Const2 output: 1
-Mux1 output: 0
-OR2 output: 1
-AND1 output: 1
+
+Const1 output: 0
+
 Const2 output: 1
-USR1 registers: [1, 1, 1, 1]
-USR1 output: 1
+
 clk0 output: 1
-------------------------------------------
-------------------------------------------
-            END OF SIMULATION             
-------------------------------------------
+
+USR1 output: (1, 'Current Registry:', [1, 1, 1, 1])
+
+Const2 output: 1
+
+Const1 output: 0
+
+Const1 output: 0
+
+USR2 output: (1, 'Current Registry:', [1, 1, 1, 1])
+
+USR1 output: (1, 'Current Registry:', [1, 1, 1, 1])
+
+Const1 output: 0
+
+Const2 output: 1
+
+AND1 output: 0
+
+Switch1 output: [0, 1, 1]
+
+AND1 output: 0
+
+USR2 output: (1, 'Current Registry:', [1, 1, 1, 1])
+
+USR3 output: (1, 'Current Registry:', [1, 1, 1, 1])
+
+-----------------------------------------------------------------------
+Run: 7 
+
+Const1 output: 0
+
+Const2 output: 1
+
+Const2 output: 1
+
+Inv0 output: 1
+
+clk0 output: 1
+
+USR1 output: (1, 'Current Registry:', [1, 1, 1, 1])
+
+Const2 output: 1
+
+Const1 output: 0
+
+Inv0 output: 1
+
+Const1 output: 0
+
+OR1 output: 1
+
+Const2 output: 1
+
+Const1 output: 0
+
+Const2 output: 1
+
+clk0 output: 1
+
+USR1 output: (1, 'Current Registry:', [1, 1, 1, 1])
+
+Const2 output: 1
+
+Const1 output: 0
+
+Const1 output: 0
+
+USR2 output: (1, 'Current Registry:', [1, 1, 1, 1])
+
+USR1 output: (1, 'Current Registry:', [1, 1, 1, 1])
+
+Const1 output: 0
+
+Const2 output: 1
+
+AND1 output: 0
+
+Switch1 output: [0, 1, 1]
+
+AND1 output: 0
+
+USR2 output: (1, 'Current Registry:', [1, 1, 1, 1])
+
+USR3 output: (1, 'Current Registry:', [1, 1, 1, 1])
+
+-----------------------------------------------------------------------
+                         END OF SIMULATION             
+-----------------------------------------------------------------------

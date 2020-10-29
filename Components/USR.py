@@ -18,7 +18,6 @@ class usr(Init):
         super().__init__(name)
         self.interior_seq = interior_seq
         self.clk = clk
-        self.result = 0
 
     """    
       The following take the incoming list(interior_seq) of binary number and shift these to
@@ -51,5 +50,10 @@ class usr(Init):
     def shift_serial(self, input1, input2):
         input1.insert(0, input2)
         self.result = input1.pop()
+
+    def output(self):
+        return self.result,'Current Registry:', self.interior_seq
+
+
 
 

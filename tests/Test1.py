@@ -9,9 +9,8 @@ from GroupTortureProject.Components.USR import usr
 from GroupTortureProject.System.digitalSystem import DigitalSystem
 
 class Test1(TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)
-
+    """This is the first test script for our Digital System.
+    Here we have various test cases for our components and System"""
     def test_output(self):
         andGate = Gates("AND0", "AND")
         andGate.Output([1, 1])
@@ -59,34 +58,35 @@ class Test1(TestCase):
         constantObj = const("cosnt0",133030303)
         assert constantObj.result ==133030303, "The expected result was zero"
 
-    def test_Sys(self):
+    def test_Sys(self): #this test creates a textfile that Simulates the System.
         w = clock("clk0", 1)
         a = const("Const1", 1)
-        b = const("Const2", 1)
+        b = const("Const2", 0)
         c = Inverter("Inverter1")
         #d = switch("Switch1") #d: [a, b, b]
+        d = usr("USR0", w.result, [w, a, b, c])  # Supposed to print whats in the register
         e = Gates("AND1", "AND")  # Constant output object
-        f = Gates("AND2", "AND")
+        f = usr("USR1", w.result, [b, w, c, c])  # Supposed to print whats in the register
         g = Gates("OR1", "OR")
-        h = Gates("OR2", "OR")
         i = Mux("Mux1")
-        j = Gates("OR3", "OR")
+        j = Gates("OR2", "OR")
         k = clock("clk1", 1)
-        l = usr("USR1", k.result, [1, 1, 0, 1])  # Supposed to print whats in the register
-        m = Gates("NOR", "NOR")
-        IO_dict = {w: [],
+        l = usr("USR2", k.result, [1, 1, 0, 1])  # Supposed to print whats in the register
+        IO_dict = {
+                   c: [a,w],
+                   e: [w, a],
+                   g: [a, a],
+                   j: [w, b],
+                   k: [],
+                   l: [e, b, w, a, b],
+                   d: [a, c, i, k, w],
+                   f: [e, g, l, d, a],
+                   w: [],
                    a: [],
                    b: [],
-                   c: [a],
-                   e: [w, a],
-                   f: [b, c],
-                   g: [a, f],
-                   h: [e, g],
-                   i: [g, h, b],
-                   j: [i, h],
-                   k: [], l: [e, b],
-                   m: [l, w]}
+                   i: [g, e, b]}
         Test_Sys = DigitalSystem(IO_dict, 7)
+        print(Test_Sys.network_dict)
         #print(d.__doc__)
         # print(Test_Sys.__doc__)
         # print(Test_Sys.traverse.__doc__)

@@ -88,7 +88,7 @@ def traverse(randomNode):
     order.append(randomNode)
 
 
-
+print(organize(connection_dict))
 """
 #THIS ONE RUNS CORRECTLY 
 

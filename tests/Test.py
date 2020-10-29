@@ -8,10 +8,7 @@ from GroupTortureProject.Components.Switch import switch
 from GroupTortureProject.Components.USR import usr
 from GroupTortureProject.System.digitalSystem import DigitalSystem
 
-class Test1(TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)
-
+class Test(TestCase):
     def test_output(self):
         andGate = Gates("AND0", "AND")
         andGate.Output([1, 0])
@@ -56,33 +53,43 @@ class Test1(TestCase):
         constantObj = const("cosnt0",231312)
         assert constantObj.result ==231312, "The expected result was zero"
 
-    def test_Sys(self):
-        w = clock("clk0", 1)
-        a = const("Const1", 1)
+    def test_Sys(self): #this test creates a textfile that Simulates the System.
+
+        w = switch("Switch1") #d: [a, b, b]
+        a = const("Const1", 0)
         b = const("Const2", 1)
-        c = Inverter("Inverter1")
-        d = switch("Switch1")
-        e = Gates("AND1", "AND")  # Constant output object
-        f = Gates("AND2", "AND")
+        c = clock("clk0", 1)
+        d = Inverter("Inv0")
+        e = usr("USR1", c.result, [0, 1, 0, 1])  # Supposed to print whats in the register
+        f = usr("USR2", c.result, [1,1,1,0])  # Supposed to print whats in the register
         g = Gates("OR1", "OR")
-        h = Gates("OR2", "OR")
+        h = Gates("AND1", "AND")
         i = Mux("Mux1")
-        j = Gates("OR3", "OR")
+        j = Gates("OR2", "OR")
         k = clock("clk1", 1)
-        l = usr("USR1", k.result, [1, 1, 1, 1])  # Supposed to print whats in the register
-        m = Gates("NOR", "NOR")
-        IO_dict = {w: [], a: [], b: [], c: [a], e: [w, a], f: [b, c],
-                   g: [a, f], h: [e, g], i: [g, h, b], j: [i, h], d: [a, b, b], k: [], l: [e, b], m: [l, w]}
-        network_list = [[w], [a], [b], [c], [d], [e], [f], [g], [h], [i], [j], [k], [l], [m]]  # Each component of the list represents a layer with the components that are inside of that layer.
-        Test_Sys = DigitalSystem(IO_dict,network_list, 2)
-        Test_Sys.organize(IO_dict)
-        print(Test_Sys.order)
+        l = usr("USR3", k.result, [1, 1, 0, 1])  # Supposed to print whats in the register
+
+        IO_dict = {
+                   w: [a, b, b],
+                   c: [],
+                   l: [d, c, e, b, a],
+                   d: [],
+                   b: [],
+                   e: [d, a, g, b, a],
+                   f: [b, c, e , b , a],
+                   g: [a, f],
+                   h: [e, a],
+                   j: [b, h],
+                   k: [],
+                   a: [],
+                   i: [w, h, f, l],
+                   }
+        Test_Sys = DigitalSystem(IO_dict, 7)
+        print(Test_Sys.network_dict)
         #print(d.__doc__)
-        print(Test_Sys.__doc__)
-        print(Test_Sys.traverse.__doc__)
-        print(Test_Sys.organize.__doc__)
-
-
+        # print(Test_Sys.__doc__)
+        # print(Test_Sys.traverse.__doc__)
+        # print(Test_Sys.organize.__doc__)
 
 
 

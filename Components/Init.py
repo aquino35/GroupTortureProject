@@ -10,7 +10,7 @@ class Init:
     def __init__(self, name):
         self.name = name
         # self.__result = 0
-        self.result = 0
+        self.result = None
 
     def __repr__(self):
         return self.name
@@ -22,4 +22,3 @@ class Init:
     def output(self):
         output1 = self.result
         return output1
-
