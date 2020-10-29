@@ -5,7 +5,7 @@ Created on Wed Oct 14 20:38:35 2020
 
 @author: osvaldo
 """
-from GroupTortureProject.Components.BaseComponent import BaseComponent
+from Components.BaseComponent import BaseComponent
 
 
 class const(BaseComponent):
