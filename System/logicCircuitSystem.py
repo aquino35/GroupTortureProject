@@ -81,9 +81,10 @@ class LogicCircuitSystem():
                 for dig_comp_in in self.network_dict[
                     dig_comp]:  # This loops gathers the necessary inputs for the current component
                     input_list.append(dig_comp_in.result)
-                    self.textFile.writelines(f'{dig_comp_in.name} output: {dig_comp_in.output()}\n')
+                    #self.textFile.writelines(f'{dig_comp_in.name} output: {dig_comp_in.output()}\n')
                     self.textFile.writelines(f'\n')
                 dig_comp.Output(input_list)
+                self.textFile.writelines(f'{dig_comp.name} output: {dig_comp.output()}\n')
             run_count += 1
             self.textFile.writelines("-----------------------------------------------------------------------\n")
         self.textFile.writelines("                         END OF SIMULATION             \n")
