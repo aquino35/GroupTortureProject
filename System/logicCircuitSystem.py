@@ -54,8 +54,7 @@ class LogicCircuitSystem():
         self.order.append(dig_comp)
 
     def Run(self):
-        self.textFile.writelines(
-            f'Welcome to the text file of the Digital Circuit System simulator. \n')  # start of text file
+        self.textFile.writelines(f'Welcome to the text file of the Digital Circuit System simulator. \n')  # start of text file
         self.textFile.writelines(f'This is a Simulation of {self.run_max - 1} runs of the System.  \n')
         self.textFile.writelines(f'\n')
         self.textFile.writelines(f'The order of the following network is: \n')  # showing order of system in text
@@ -66,9 +65,8 @@ class LogicCircuitSystem():
         self.textFile.writelines("-----------------------------------------------------------------------\n")
         self.textFile.writelines(f'Run 0: \n')
         self.textFile.writelines(f'\n')
-        for dig_comp in self.ordered_network_list:  # This nested loop gathers all initial values for the text file
-            for dig_comp_in in self.network_dict[dig_comp]:
-                self.textFile.writelines(f'{dig_comp_in.name} output: {dig_comp_in.output()}\n')
+        for dig_comp in self.ordered_network_list:  # This loop gathers all initial values for the text file
+            self.textFile.writelines(f'{dig_comp.name} output: {dig_comp.output()}\n')
                 #self.textFile.writelines(f'\n')
         self.textFile.writelines("-----------------------------------------------------------------------\n")
         run_count = 1

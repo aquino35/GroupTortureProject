@@ -10,38 +10,15 @@ The order of the following network is:
 Run 0: 
 
 Cnst1 output: 1
-Cnst1 output: 1
 Cnst2 output: 0
-Cnst2 output: 0
-Cnst1 output: 1
-Cnst2 output: 0
-Cnst1 output: 1
 clk0 output: 1
-Cnst2 output: 0
-Cnst2 output: 0
-Cnst1 output: 1
-Cnst2 output: 0
-Cnst1 output: 1
-Cnst1 output: 1
-Cnst1 output: 1
-clk0 output: 1
-Cnst1 output: 1
-Cnst1 output: 1
-clk0 output: 1
-Cnst2 output: 0
+USR1 output: (None, 'Current Registry:', [0, 1, 0, 0])
+USR2 output: (None, 'Current Registry:', [1, 0, 1, 0])
 AND1 output: None
 AND2 output: None
-Cnst1 output: 1
-Cnst2 output: 0
-Cnst2 output: 0
-Cnst2 output: 0
-Cnst1 output: 1
 OR1 output: None
-Cnst2 output: 0
-clk0 output: 1
-clk0 output: 1
-Cnst1 output: 1
 USR3 output: (None, 'Current Registry:', [None, None, None, None])
+Mux0 output: None
 -----------------------------------------------------------------------
 Run: 1 
 

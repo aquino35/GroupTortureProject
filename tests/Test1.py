@@ -80,7 +80,7 @@ class Test1(TestCase):
                            f: [b, a],
                            g: [a, b],
                            h: [a, c],
-                           i: [a, b, c, b, a, h, b, a, c]}
+                           i: [a, b, a, b, a, c, b, c]}
 
 
         Test_Sys = LogicCircuitSystem(connection_dict, 7)
