@@ -6,10 +6,12 @@ Created on Wed Sep  2 23:36:37 2020
 """
 
 
-class Init:
+class BaseComponent:
+    """ The idea of this class is to have a base component so that we can use to inheritance
+    to inherit key attributes and functions that go inside all the components.
+    """
     def __init__(self, name):
         self.name = name
-        # self.__result = 0
         self.result = None
 
     def __repr__(self):

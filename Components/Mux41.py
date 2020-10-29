@@ -4,10 +4,10 @@ Created on Wed Sep  9 22:58:59 2020
 
 @author: juang
 """
-from GroupTortureProject.Components.Init import Init
+from GroupTortureProject.Components.BaseComponent import BaseComponent
 
 
-class Mux(Init):
+class Mux(BaseComponent):
     """
     This the Mux digital component class. Its objective is to return a given output depending on
     the giving selection.

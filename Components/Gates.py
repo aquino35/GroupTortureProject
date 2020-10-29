@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from GroupTortureProject.Components.Init import Init
-class Gates(Init):
+from GroupTortureProject.Components.BaseComponent import BaseComponent
+class Gates(BaseComponent):
     """
     This is the digital Gate component class. Its job simulate the components:
                     AND [001]
@@ -34,18 +34,19 @@ class Gates(Init):
         self.checked = False
         self.gates = gates
         self.checkInputErrors(gates)
-        self.__InitiateGate()
+        self.InitiateGate()
 
     def Output(self, inputs):
-        self.checkInputErrors(inputs)
-        # This will return the value of the desired component from the inputs placed
-        result = Gates.Truth_Table[self.gates][inputs[0] + inputs[1]]
-        # For the and, or , xor gates, for more than two inputs, used this lopp to calculate the
-        # values
-        for increased_num in range(2, len(inputs)):
-            result = Gates.Truth_Table[self.gates][result + inputs[increased_num]]
-        self.result = result
-        return result
+        if not self.result == None:
+            self.checkInputErrors(inputs)
+            # This will return the value of the desired component from the inputs placed
+            result = Gates.Truth_Table[self.gates][inputs[0] + inputs[1]]
+            # For the and, or , xor gates, for more than two inputs, used this lopp to calculate the
+            # values
+            for increased_num in range(2, len(inputs)):
+                result = Gates.Truth_Table[self.gates][result + inputs[increased_num]]
+            self.result = result
+            return result
 
     def checkInputErrors(self, inputs):
         # Checks once if the gate has the correct amount of inputs
@@ -61,7 +62,7 @@ class Gates(Init):
     # This will help initiate this class with the corresponding components and
     # Values of the truth table of each one
     @staticmethod
-    def __InitiateGate():
+    def InitiateGate():
         if not hasattr(Gates, "initialized"):  # This initialization is only ran once for the class
             Gates.initialized = None
             Gates.Truth_Table = {"AND": [0, 0, 1], "OR": [0, 1, 1], "XOR": [0, 1, 0], "NAND": [1, 1, 0],

@@ -6,7 +6,7 @@ from GroupTortureProject.Components.Inverter import Inverter
 from GroupTortureProject.Components.Mux41 import Mux
 from GroupTortureProject.Components.Switch import switch
 from GroupTortureProject.Components.USR import usr
-from GroupTortureProject.System.digitalSystem import DigitalSystem
+from GroupTortureProject.System.logicCircuitSystem import LogicCircuitSystem
 
 class Test1(TestCase):
     """This is the first test script for our Digital System.
@@ -85,7 +85,7 @@ class Test1(TestCase):
                    a: [],
                    b: [],
                    i: [g, e, b]}
-        Test_Sys = DigitalSystem(IO_dict, 7)
+        Test_Sys = LogicCircuitSystem(IO_dict, 7)
         print(Test_Sys.network_dict)
         #print(d.__doc__)
         # print(Test_Sys.__doc__)

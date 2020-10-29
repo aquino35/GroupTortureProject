@@ -5,10 +5,10 @@ Created on Wed Oct 14 20:38:35 2020
 
 @author: osvaldo
 """
-from GroupTortureProject.Components.Init import Init
+from GroupTortureProject.Components.BaseComponent import BaseComponent
 
 
-class const(Init):
+class const(BaseComponent):
     """
     This is the constant digital component. This class will take a given
     input an return the same value.

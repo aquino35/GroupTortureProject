@@ -6,7 +6,7 @@ from GroupTortureProject.Components.Inverter import Inverter
 from GroupTortureProject.Components.Mux41 import Mux
 from GroupTortureProject.Components.Switch import switch
 from GroupTortureProject.Components.USR import usr
-from GroupTortureProject.System.digitalSystem import DigitalSystem
+from GroupTortureProject.System.logicCircuitSystem import LogicCircuitSystem
 
 class Test(TestCase):
     def test_output(self):
@@ -60,14 +60,14 @@ class Test(TestCase):
         b = const("Const2", 1)
         c = clock("clk0", 1)
         d = Inverter("Inv0")
-        e = usr("USR1", c.result, [0, 1, 0, 1])  # Supposed to print whats in the register
-        f = usr("USR2", c.result, [1,1,1,0])  # Supposed to print whats in the register
+        e = usr("USR1",[0, 1, 0, 1])  # Supposed to print whats in the register
+        f = usr("USR2", [1,1,1,0])  # Supposed to print whats in the register
         g = Gates("OR1", "OR")
         h = Gates("AND1", "AND")
         i = Mux("Mux1")
         j = Gates("OR2", "OR")
         k = clock("clk1", 1)
-        l = usr("USR3", k.result, [1, 1, 0, 1])  # Supposed to print whats in the register
+        l = usr("USR3", [1, 1, 0, 1])  # Supposed to print whats in the register
 
         IO_dict = {
                    w: [a, b, b],
@@ -84,7 +84,7 @@ class Test(TestCase):
                    a: [],
                    i: [w, h, f, l],
                    }
-        Test_Sys = DigitalSystem(IO_dict, 7)
+        Test_Sys = LogicCircuitSystem(IO_dict, 7)
         print(Test_Sys.network_dict)
         #print(d.__doc__)
         # print(Test_Sys.__doc__)

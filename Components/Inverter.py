@@ -5,10 +5,10 @@ Created on Thu Aug 20 13:25:28 2020
 
 @author: judragon
 """
-from GroupTortureProject.Components.Init import Init
+from GroupTortureProject.Components.BaseComponent import BaseComponent
 
 # Creating a class for the components: inverter
-class Inverter(Init):
+class Inverter(BaseComponent):
     """
     This is the Inverter digital component. This class will take a given binary
     input an return the inverted value.
