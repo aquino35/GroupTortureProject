@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from Components.BaseComponent import BaseComponent
+from GroupTortureProject.Components.BaseComponent import BaseComponent
 class Gates(BaseComponent):
     """
     This is the digital Gate component class. Its job simulate the components:
@@ -50,6 +50,9 @@ class Gates(BaseComponent):
 
     def checkInputErrors(self, inputs):
         # Checks once if the gate has the correct amount of inputs
+        inputSet = set(inputs)
+        if None in inputSet:
+            raise ValueError("A Gate object cannot have 'None' input values")
         if not self.checked:
             length = len(inputs)
             if length == 1:
