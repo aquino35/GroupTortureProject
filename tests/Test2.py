@@ -12,12 +12,25 @@ from GroupTortureProject.System.logicCircuitSystem import LogicCircuitSystem
 class Test2(TestCase):
     def test_output(self):
         andGate = Gates("AND0", "AND")
+
         andGate.Output([1, 0])
         assert andGate.result == 0, "The expected result was zero"
 
+        andGate.Output([1,1,1,0,1,1,1,1,1,1])
+        assert andGate.result == 0, "The expected result was zero"
+
+        andGate.Output([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1])
+        assert andGate.result == 1, "The expected result was zero"
+
         orGate = Gates("OR0", "OR")
-        orGate.Output([1, 0])
+
+        orGate.Output([1, 0, 1,1,1,1,1,1,1])
         assert orGate.result == 1, "The expected result was one"
+        orGate.Output([0,0,0,0,0,0,0,1])
+        assert orGate.result == 1, "The expected result was one"
+
+        orGate.Output([0,0,0,0,0,0,0,0])
+        assert orGate.result == 0, "The expected result was zero"
 
         nandGate = Gates("NAND0", "NAND")
         nandGate.Output([1, 0])
@@ -28,7 +41,15 @@ class Test2(TestCase):
         assert norGate.result == 0, "The expected result was zero"
 
         xorGate = Gates("XOR0", "XOR")
-        xorGate.Output([0, 0])
+        xorGate.Output([0, 1]) #the only way we get a one
+        assert xorGate.result == 1, "The expected result was zero"
+
+        xorGate.Output([0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1])
+        assert xorGate.result == 0, "The expected result was zero"
+        xorGate.Output([0,0,0,0,0,0,0,0,0,0])
+        assert xorGate.result == 0, "The expected result was zero"
+
+        xorGate.Output([1,1,1,1,1,1,1,1,1,1])
         assert xorGate.result == 0, "The expected result was zero"
 
         # clck = clock("clck0", 1)
@@ -41,9 +62,35 @@ class Test2(TestCase):
         # print("-------------")
         # assert usrObject.result == 1, "The expected result was one"
 
+        switchObj = switch("Switch0")
+        switchObj.Output([101, 100, 0])
+        assert switchObj.result == 101, "The expected result was 101"
+
+        switchObj.Output([101, 100, 1])
+        assert switchObj.result == 100, "The expected result was 100"
+
+        switchObj.Output([101, None , 1])
+        assert switchObj.result == 100,"The expected result was 100"
+
+        switchObj.Output([None, None , 0])
+        assert switchObj.result == 101,"The expected result was 100"
+
+        switchObj.Output([None, None , 0])
+        assert switchObj.result == None,"The expected result was 100"
+
+        # #testing switch assertion error
+        # switchObj.Output([100,200,3,0,1])  # Assertion error because of three or more inputs
+        # print(switchObj.result)
+        # assert switchObj.result == 1,"Expected AssertionError"
+
         muxObject = Mux("Mux0")  # mux obj
         muxObject.Output([[10101], [1001], [110010], [10001010], 0, 1])
         assert muxObject.result == [1001], "The expected result was [10001010]"
+
+        # #testing assertion error
+        # muxObject = Mux("Mux0")  # mux obj
+        # muxObject.Output([[10101], [1001], [110010], [10001010], 4, 1])
+        # assert muxObject.result == [1001], "The expected result was [10001010]"
 
     def test_operate(self):  # testing the clck obj
         clockObject1 = clock("clck0", 1)
@@ -51,8 +98,8 @@ class Test2(TestCase):
         assert clockObject1.result == 0, "The expected result was one"
 
     def test_const(self):  # testing const obj
-        constantObj = const("cosnt0", 231312)
-        assert constantObj.result == 231312, "The expected result was zero"
+        constantObj = const("cosnt0", 1)
+        assert constantObj.result == 1, "The expected result was 1"
 
     def test_Sys(self):  # this test creates a textfile that Simulates the System.
 
@@ -77,7 +124,7 @@ class Test2(TestCase):
                            g: [c, b],
                            h: [f, g],
                            i: [a, b, b, b, a, h, b, c],
-                           j: [c, a, i]}
+                           j: [c, b ,i, g, a, b]}
                           # k:[b,i]}
 
         Test_Sys = LogicCircuitSystem(connection_dict, 7)

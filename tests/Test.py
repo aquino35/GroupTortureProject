@@ -72,17 +72,17 @@ class Test(TestCase):
         IO_dict = {
                    w: [a, b, b],
                    c: [],
-                   l: [d, c, e, b, a],
+                   l: [d, c, e, b, a, i, e, w],
                    d: [],
                    b: [],
-                   e: [d, a, g, b, a],
-                   f: [b, c, e , b , a],
-                   g: [a, f],
-                   h: [e, a],
+                   e: [d, a, g, b, a, b, w, c],
+                   f: [b, c, e , b , a, w, b, c],
+                   g: [a, c],
+                   h: [d, a],
                    j: [b, h],
                    k: [],
                    a: [],
-                   i: [w, h, f, l],
+                   i: [w, h, f, a],
                    }
         Test_Sys = LogicCircuitSystem(IO_dict, 7)
         print(Test_Sys.network_dict)

@@ -50,6 +50,9 @@ class Gates(BaseComponent):
 
     def checkInputErrors(self, inputs):
         # Checks once if the gate has the correct amount of inputs
+        inputSet = set(inputs)
+        if None in inputSet:
+            raise ValueError("A Gate object cannot have 'None' input values")
         if not self.checked:
             length = len(inputs)
             if length == 1:
