@@ -102,12 +102,22 @@ class Test(TestCase):
         with pytest.raises(ValueError):
 
             andGate = Gates("AND0", "AND")
-            self.assertRaises(ValueError, andGate, andGate.Output([1, None]))
+            self.assertRaises(ValueError, andGate, andGate.Output([1, None])) #testing for none error
+
+            andGate = Gates("OR0", "OR")
+            self.assertRaises(ValueError, andGate, andGate.Output([1])) #testing for none error
+
+            nandGate = Gates("NAND0", "NAND")
+            self.assertRaises(ValueError, nandGate, nandGate.Output([1, 0, 1, 0])) #testing for size error
+
+            norGate = Gates("NOR0", "NOR")
+            self.assertRaises(ValueError, norGate, norGate.Output([1, 1, 1, 1, 1 , 1])) #testing for size error
 
             # testing for switch errors
             switchObj = switch("Switch0")
             self.assertRaises(ValueError, switchObj, switchObj.Output(
                 [10100, 100101, 1566, 10010, 11010, 10101]))  # Assertion error because of three or more inputs
+
             # #testing Value error
             muxObject = Mux("Mux0")  # mux obj
             self.assertRaises(ValueError, muxObject, muxObject.Output(

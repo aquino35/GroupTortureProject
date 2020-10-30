@@ -97,6 +97,19 @@ class Test2(TestCase):
 
         # testing switch value error
         with pytest.raises(ValueError):
+
+            andGate = Gates("AND0", "AND")
+            self.assertRaises(ValueError, andGate, andGate.Output([None, 1]))  # testing for none error
+
+            andGate = Gates("OR0", "OR")
+            self.assertRaises(ValueError, andGate, andGate.Output([]))  # testing for none error
+
+            nandGate = Gates("NAND0", "NAND")
+            self.assertRaises(ValueError, nandGate, nandGate.Output([0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0]))  # testing for size error
+
+            norGate = Gates("NOR0", "NOR")
+            self.assertRaises(ValueError, norGate, norGate.Output([1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1]))  # testing for size error
+
             #testing for switch errors
             switchObj = switch("Switch0")
             self.assertRaises(ValueError, switchObj, switchObj.Output([100, 200, 3, 0, 1]))# Assertion error because of three or more inputs

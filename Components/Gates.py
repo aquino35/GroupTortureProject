@@ -32,14 +32,15 @@ class Gates(BaseComponent):
     def __init__(self, name, gates):
         super().__init__(name)
         self.checked = False
-        self.checkedOutput = False
         self.gates = gates
-        self.checkInputErrors(gates)
+        #self.checkInputErrors(gates)
         self.InitiateGate()
 
     def Output(self, inputs):
 
-        self.checkOutputErrors(inputs)
+        #if not self.result == None:
+        self.checked = False
+        self.checkInputErrors(inputs)
         # This will return the value of the desired component from the inputs placed
         result = Gates.Truth_Table[self.gates][inputs[0] + inputs[1]]
         # For the and, or , xor gates, for more than two inputs, used this lopp to calculate the
@@ -50,25 +51,24 @@ class Gates(BaseComponent):
         return result
 
     def checkInputErrors(self, inputs):
-        if not self.checked:
-            length = len(inputs)
-            if length == 1:
-                raise Exception("A Gate object must have 2 or more inputs")
-            # elif length > 2 and self.gates in ["NAND", "NOR"]:
-            #     raise Exception(f'"{self.name}", which is a {self.gates} gate, cannot receive more than two inputs.')
-            else:
-                self.checked = True
 
-    def checkOutputErrors(self, inputs):
-        if not self.checkedOutput:
+        if not self.checked:
             # Checks once if the gate has the correct amount of inputs
             inputSet = set(inputs)
             if None in inputSet:
                 raise ValueError("A Gate object cannot have 'None' input values")
-            # elif inputs > 1:
+            # elif not (1 or 0) in inputSet:
+            #     print(inputs)
             #     raise ValueError("A Gate object must only have binary values")
-            # else:
-            #     self.checkedOutput = True
+            # elif not (1 or 0) in inputSet:
+            #     raise ValueError("sdfdfd")
+            length = len(inputs)
+            if length == 1:
+                raise Exception("A Gate object must have 2 or more inputs")
+            elif length > 2 and self.gates in ["NAND", "NOR"]:
+                raise Exception(f'"{self.name}", which is a {self.gates} gate, cannot receive more than two inputs.')
+            else:
+                self.checked = True
 
     # This will help initiate this class with the corresponding components and
     # Values of the truth table of each one
