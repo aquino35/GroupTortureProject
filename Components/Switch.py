@@ -4,7 +4,7 @@ Created on Mon Oct 12 16:15:21 2020
 
 @author: juang
 """
-from GroupTortureProject.Components.BaseComponent import BaseComponent
+from Components.BaseComponent import BaseComponent
 
 class switch(BaseComponent):
 

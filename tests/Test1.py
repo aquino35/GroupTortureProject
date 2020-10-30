@@ -1,12 +1,12 @@
 from unittest import TestCase
-from GroupTortureProject.Components.Clock import clock
-from GroupTortureProject.Components.Constant import const
-from GroupTortureProject.Components.Gates import Gates
-from GroupTortureProject.Components.Inverter import Inverter
-from GroupTortureProject.Components.Mux41 import Mux
-from GroupTortureProject.Components.Switch import switch
-from GroupTortureProject.Components.USR import usr
-from GroupTortureProject.System.logicCircuitSystem import LogicCircuitSystem
+from Components.Clock import clock
+from Components.Constant import const
+from Components.Gates import Gates
+from Components.Inverter import Inverter
+from Components.Mux41 import Mux
+from Components.Switch import switch
+from Components.USR import usr
+from System.logicCircuitSystem import LogicCircuitSystem
 
 class Test1(TestCase):
     """This is the first test script for our Digital System.

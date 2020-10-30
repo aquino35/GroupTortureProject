@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from GroupTortureProject.Components.BaseComponent import BaseComponent
+from Components.BaseComponent import BaseComponent
 class Gates(BaseComponent):
     """
     This is the digital Gate component class. Its job simulate the components:

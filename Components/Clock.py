@@ -4,7 +4,7 @@ Created on Sat Sep 26 19:54:43 2020
 
 @author: aespi
 """
-from GroupTortureProject.Components.BaseComponent import BaseComponent
+from Components.BaseComponent import BaseComponent
 
 
 class clock(BaseComponent):

@@ -1,4 +1,4 @@
-from GroupTortureProject.Components.BaseComponent import BaseComponent
+from Components.BaseComponent import BaseComponent
 
 
 class usr(BaseComponent):
@@ -49,9 +49,6 @@ class usr(BaseComponent):
         else:
             return self.result
             #raise Exception("Usr not operating")
-
-
-
 
     def shift_serial(self, input1, input2):
         input1.insert(0, input2)
