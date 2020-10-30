@@ -8,8 +8,8 @@ Created on Fri Oct  9 18:50:14 2020
 class LogicCircuitSystem():
     """  This class is defined as The Logic Circuit System Simulator. Its job is to simulate a digital system that runs
     numerous amounts of connected components. The class needs a connection dictionary with the given components
-    and the user wants to simulate and the number of runs the user wants it to run. The system will also take the
-    connection dictionary and establish a proper order consisting on any dependency the components has.
+    and the number of runs the user wants to simulate. The system will also take the connection dictionary and establish
+    a proper order consisting on any dependency the components has.
     """
 
     def __init__(self, layered_comp_list, num_of_runs):
@@ -47,11 +47,11 @@ class LogicCircuitSystem():
         :parameter dig_comp (component): a component inside the network to be evaluated.
         """
         self.visited[dig_comp] = True  # base case
+        self.order.append(dig_comp)
         for dig_comp_in in self.network_dict[
             dig_comp]:  # We traverse each node inside the connection dictionary that is given
             if not self.visited[dig_comp]:
                 self.traverse(dig_comp_in)
-        self.order.append(dig_comp)
 
     def Run(self):
         self.textFile.writelines(f'Welcome to the text file of the Digital Circuit System simulator. \n')  # start of text file

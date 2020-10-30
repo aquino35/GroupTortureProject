@@ -2,114 +2,130 @@ Welcome to the text file of the Digital Circuit System simulator.
 This is a Simulation of 7 runs of the System.  
 
 The order of the following network is: 
-[Cnst1, Cnst2, clk0, USR1, USR2, AND1, AND2, OR1, USR3, Mux0] 
+[Cst1, Cst2, clk0, OR1, USR3, USR1, clk1, AND1, USR2, Mux0, AND2, Cst3] 
 
 -----------------------------------------------------------------------
                          START OF SIMULATION           
 -----------------------------------------------------------------------
 Run 0: 
 
-Cnst1 output: 1
-Cnst2 output: 0
-clk0 output: 1
-USR1 output: (None, 'Current Registry:', [0, 1, 0, 0])
-USR2 output: (None, 'Current Registry:', [1, 0, 1, 0])
-AND1 output: None
-AND2 output: None
+Cst1 output: 0
+Cst2 output: 1
+clk0 output: 0
 OR1 output: None
-USR3 output: (None, 'Current Registry:', [None, None, None, None])
+USR3 output: (None, 'Current Registry:', [0, 0, 1, 0])
+USR1 output: (None, 'Current Registry:', [0, 1, 0, 1])
+clk1 output: 0
+AND1 output: None
+USR2 output: (None, 'Current Registry:', [None, None, None, None])
 Mux0 output: None
+AND2 output: None
+Cst3 output: 1
 -----------------------------------------------------------------------
 Run: 1 
 
-Cnst1 output: 1
-Cnst2 output: 0
-clk0 output: 0
-USR1 output: (None, 'Current Registry:', [0, 1, 0, 0])
-USR2 output: (None, 'Current Registry:', [1, 0, 1, 0])
-AND1 output: 1
-AND2 output: 0
+Cst1 output: 0
+Cst2 output: 1
+clk0 output: 1
 OR1 output: 1
-USR3 output: (None, 'Current Registry:', [None, None, None, None])
-Mux0 output: None
+USR3 output: (None, 'Current Registry:', [0, 0, 1, 0])
+USR1 output: ([0, 1, 0, 1], 'Current Registry:', [0, 1, 0, 1])
+clk1 output: 1
+AND1 output: 1
+USR2 output: (None, 'Current Registry:', [None, None, None, 1])
+Mux0 output: 1
+AND2 output: 1
+Cst3 output: 1
 -----------------------------------------------------------------------
 Run: 2 
 
-Cnst1 output: 1
-Cnst2 output: 0
-clk0 output: 1
+Cst1 output: 0
+Cst2 output: 1
+clk0 output: 0
+OR1 output: 0
+USR3 output: (0, 'Current Registry:', [0, 1, 0, 0])
 USR1 output: ([0, 1, 0, 1], 'Current Registry:', [0, 1, 0, 1])
-USR2 output: (1, 'Current Registry:', [0, 1, 0, 0])
-AND1 output: 1
+clk1 output: 0
+AND1 output: 0
+USR2 output: (None, 'Current Registry:', [None, None, None, 1])
+Mux0 output: 0
 AND2 output: 0
-OR1 output: 1
-USR3 output: (None, 'Current Registry:', [1, None, None, None])
-Mux0 output: None
+Cst3 output: 1
 -----------------------------------------------------------------------
 Run: 3 
 
-Cnst1 output: 1
-Cnst2 output: 0
-clk0 output: 0
-USR1 output: ([0, 1, 0, 1], 'Current Registry:', [0, 1, 0, 1])
-USR2 output: (1, 'Current Registry:', [0, 1, 0, 0])
-AND1 output: 1
-AND2 output: 0
+Cst1 output: 0
+Cst2 output: 1
+clk0 output: 1
 OR1 output: 1
-USR3 output: (None, 'Current Registry:', [1, None, None, None])
-Mux0 output: None
+USR3 output: (0, 'Current Registry:', [0, 1, 0, 0])
+USR1 output: ([0, 1, 0, 1], 'Current Registry:', [0, 1, 0, 1])
+clk1 output: 1
+AND1 output: 1
+USR2 output: (None, 'Current Registry:', [None, None, 1, 1])
+Mux0 output: 1
+AND2 output: 1
+Cst3 output: 1
 -----------------------------------------------------------------------
 Run: 4 
 
-Cnst1 output: 1
-Cnst2 output: 0
-clk0 output: 1
+Cst1 output: 0
+Cst2 output: 1
+clk0 output: 0
+OR1 output: 0
+USR3 output: (0, 'Current Registry:', [1, 0, 0, 0])
 USR1 output: ([0, 1, 0, 1], 'Current Registry:', [0, 1, 0, 1])
-USR2 output: (0, 'Current Registry:', [1, 0, 0, 0])
-AND1 output: 1
+clk1 output: 0
+AND1 output: 0
+USR2 output: (None, 'Current Registry:', [None, None, 1, 1])
+Mux0 output: 0
 AND2 output: 0
-OR1 output: 1
-USR3 output: (None, 'Current Registry:', [1, 1, None, None])
-Mux0 output: None
+Cst3 output: 1
 -----------------------------------------------------------------------
 Run: 5 
 
-Cnst1 output: 1
-Cnst2 output: 0
-clk0 output: 0
-USR1 output: ([0, 1, 0, 1], 'Current Registry:', [0, 1, 0, 1])
-USR2 output: (0, 'Current Registry:', [1, 0, 0, 0])
-AND1 output: 1
-AND2 output: 0
+Cst1 output: 0
+Cst2 output: 1
+clk0 output: 1
 OR1 output: 1
-USR3 output: (None, 'Current Registry:', [1, 1, None, None])
-Mux0 output: None
+USR3 output: (0, 'Current Registry:', [1, 0, 0, 0])
+USR1 output: ([0, 1, 0, 1], 'Current Registry:', [0, 1, 0, 1])
+clk1 output: 1
+AND1 output: 1
+USR2 output: (None, 'Current Registry:', [None, 1, 1, 1])
+Mux0 output: 1
+AND2 output: 1
+Cst3 output: 1
 -----------------------------------------------------------------------
 Run: 6 
 
-Cnst1 output: 1
-Cnst2 output: 0
-clk0 output: 1
+Cst1 output: 0
+Cst2 output: 1
+clk0 output: 0
+OR1 output: 0
+USR3 output: (1, 'Current Registry:', [0, 0, 0, 0])
 USR1 output: ([0, 1, 0, 1], 'Current Registry:', [0, 1, 0, 1])
-USR2 output: (1, 'Current Registry:', [0, 0, 0, 0])
-AND1 output: 1
+clk1 output: 0
+AND1 output: 0
+USR2 output: (None, 'Current Registry:', [None, 1, 1, 1])
+Mux0 output: 0
 AND2 output: 0
-OR1 output: 1
-USR3 output: (None, 'Current Registry:', [1, 1, 1, None])
-Mux0 output: None
+Cst3 output: 1
 -----------------------------------------------------------------------
 Run: 7 
 
-Cnst1 output: 1
-Cnst2 output: 0
-clk0 output: 0
-USR1 output: ([0, 1, 0, 1], 'Current Registry:', [0, 1, 0, 1])
-USR2 output: (1, 'Current Registry:', [0, 0, 0, 0])
-AND1 output: 1
-AND2 output: 0
+Cst1 output: 0
+Cst2 output: 1
+clk0 output: 1
 OR1 output: 1
-USR3 output: (None, 'Current Registry:', [1, 1, 1, None])
-Mux0 output: None
+USR3 output: (1, 'Current Registry:', [0, 0, 0, 0])
+USR1 output: ([0, 1, 0, 1], 'Current Registry:', [0, 1, 0, 1])
+clk1 output: 1
+AND1 output: 1
+USR2 output: (None, 'Current Registry:', [1, 1, 1, 1])
+Mux0 output: 1
+AND2 output: 1
+Cst3 output: 1
 -----------------------------------------------------------------------
                          END OF SIMULATION             
 -----------------------------------------------------------------------
