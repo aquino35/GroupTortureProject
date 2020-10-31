@@ -4,8 +4,16 @@ from Components.BaseComponent import BaseComponent
 class usr(BaseComponent):
     """
         Description:
-        The following class simulates the electrical component Universal Shift Register (USR)
-        Its job is too ..
+        The Universal Shift Register has four operation which are the following: shift to the left,
+        shift to the right, parallel load and idle. Shift to the left would take the incoming value(one value) and add
+        this value to the left side of the list and pop out the last values of it. Same concept applies to the
+        shift to the right, just the reverse function. The parallel function would take four new values and replace the
+        interior values of the universal shift register. Finally in the idle state no changes occur. This operation can
+        only happen when the clock value is one, and while in zero no operation would occur.
+        This method receive an list, the first values represent the new values to be added to the list.
+        The second and third values of the list decided the operation of the Universal shift register.
+        The fourth to the seventh values represent the new for values to load on the Universal shift register.
+        The last value receive the clock value.
         ValueErrors: A USR Object must have 8 input values
 
 
@@ -15,9 +23,8 @@ class usr(BaseComponent):
         """
             Description:
             This initialization method ...
-            @:param (name):
-            @:param (clck):
-            @:param (intrior_seq):
+            @:param (name): name of the component provided by the user
+            @:param (intrior_seq): initial value of the universal state register
         """
         super().__init__(name)
         self.interior_seq = interior_seq
@@ -29,7 +36,11 @@ class usr(BaseComponent):
     """
 
     def Output(self, exterior_n):
+        """
+        Description:
+        @:param(exterior_n): List of eight values use to operate the USR
 
+        """
         self.checked = False
         self.checkInputErrors(exterior_n)
         self.exterior_n = exterior_n[0]
