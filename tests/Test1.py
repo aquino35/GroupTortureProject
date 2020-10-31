@@ -11,6 +11,10 @@ from System.logicCircuitSystem import LogicCircuitSystem
 
 
 class Test1(TestCase):
+    """
+    Description:
+    Second tester class testing for outputs of components, valueErrors and outputting textfile required.
+    """
     def test_output(self):
         andGate = Gates("AND0", "AND")
 
@@ -99,24 +103,36 @@ class Test1(TestCase):
         # testing switch value error
         with pytest.raises(ValueError):
 
+            csntObj = const("Cst", 35)
+            self.assertRaises(ValueError, csntObj, csntObj.result,"Value must be binary")  # testing for none error
+
+            csntObj = const("Cst", None)
+            self.assertRaises(ValueError, csntObj, csntObj.result,"Value must be binary")  # testing for none error
+
+            clkObj = const("Clk", 35)
+            self.assertRaises(ValueError, clkObj, clkObj.result, "Value must be binary")  # testing for none erro
+
+            clkObj = const("Clk", None)
+            self.assertRaises(ValueError, clkObj, clkObj.result,"Value must be binary")  # testing for none error
+
             andGate = Gates("AND0", "AND")
-            self.assertRaises(ValueError, andGate, andGate.Output([None, None]))  # testing for none error
+            self.assertRaises(ValueError, andGate, andGate.Output([None, None])," 'AND' Gate must have two binary inputs")  # testing for none error
 
             andGate = Gates("OR0", "OR")
-            self.assertRaises(ValueError, andGate, andGate.Output([0]))  # testing for none error
+            self.assertRaises(ValueError, andGate, andGate.Output([0])," 'OR' Gate must have two binary inputs")  # testing for none error
 
             nandGate = Gates("NAND0", "NAND")
-            self.assertRaises(ValueError, nandGate, nandGate.Output([1, 0, 1, 0, 1, 0, 1, 0]))  # testing for size error
+            self.assertRaises(ValueError, nandGate, nandGate.Output([1, 0, 1, 0, 1, 0, 1, 0]),"NandGate cannot have more than two inputs")  # testing for size error
 
             norGate = Gates("NOR0", "NOR")
-            self.assertRaises(ValueError, norGate, norGate.Output([0, 0, 0, 0, 0, 0, 0, 0, 0]))  # testing for size error
+            self.assertRaises(ValueError, norGate, norGate.Output([0, 0, 0, 0, 0, 0, 0, 0, 0]),"NorGate cannot have more than two inputs")  # testing for size error
 
             #testing for switch errors
             switchObj = switch("Switch0")
-            self.assertRaises(ValueError, switchObj, switchObj.Output([10145, 461.02, 1566, 1, 1]))# Assertion error because of three or more inputs
+            self.assertRaises(ValueError, switchObj, switchObj.Output([10145, 461.02, 1566, 1, 1]),"Switch cannot have more than three inputs")# Assertion error because of three or more inputs
             # #testing Value error
             muxObject = Mux("Mux0")  # mux obj
-            self.assertRaises(ValueError, muxObject, muxObject.Output([[18465], [18721], [120260], [10451010], 4, 6]))# Assertion error because of three or more inputs
+            self.assertRaises(ValueError, muxObject, muxObject.Output([[18465], [18721], [120260], [10451010], 4, 6]), "Mux selection must be binary")# Assertion error because of three or more inputs
 
 
     def test_Sys(self):  # this test creates a textfile that Simulates the System.
