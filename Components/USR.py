@@ -3,16 +3,21 @@ from Components.BaseComponent import BaseComponent
 
 class usr(BaseComponent):
     """
-    The following class simulates the electrical component Universal Shift Register (USR)
-    Its job is too ..
+        Description:
+        The following class simulates the electrical component Universal Shift Register (USR)
+        Its job is too ..
+        ValueErrors: A USR Object must have 8 input values
+
+
     """
 
     def __init__(self, name, interior_seq=[None, None, None, None]):
         """
-        This initialization method ...
-        @:param (name):
-        @:param (clck):
-        @:param (intrior_seq):
+            Description:
+            This initialization method ...
+            @:param (name):
+            @:param (clck):
+            @:param (intrior_seq):
         """
         super().__init__(name)
         self.interior_seq = interior_seq
@@ -25,6 +30,8 @@ class usr(BaseComponent):
 
     def Output(self, exterior_n):
 
+        self.checked = False
+        self.checkInputErrors(exterior_n)
         self.exterior_n = exterior_n[0]
         self.clk = exterior_n[7]
         method = exterior_n[1:3]
@@ -56,3 +63,11 @@ class usr(BaseComponent):
 
     def output(self):
         return self.result, 'Current Registry:', self.interior_seq
+
+    def checkInputErrors(self, inputs):
+        if not self.checked:
+            length = len(inputs)
+            if length < 8 or length > 8:
+                raise Exception("A USR object must have 8 inputs")
+            else:
+                self.checked = True

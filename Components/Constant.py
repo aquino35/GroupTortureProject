@@ -10,22 +10,17 @@ from Components.BaseComponent import BaseComponent
 
 class const(BaseComponent):
     """
-    This is the constant digital component. This class will take a given
-    input an return the same value.
+        Description:
+        This is the constant class of the digital component.
+        This class will take a given input and return the same value.
+        ValueErrors: A Clock Object must be instantiated with a binary value
     """
-    def __init__(self, name,result):
+    def __init__(self, name, output):
+        """
+            Description
+            :parameter (output) : value that will remain constant.
+        """
         super().__init__(name)
         self.checked = False
-        self.checkInputErrors(input)
-        self.result = result
-
-
-    def checkInputErrors(self, input):
-        # Checks once if the gate has the correct amount of inputs
-        if not self.checked:
-            if  input==None:
-                raise Exception("A constant object can only be instantiated with the value '0' or '1'")
-            else:
-                self.checked = True
-
-
+        self.checkInputErrors(output)
+        self.result = output

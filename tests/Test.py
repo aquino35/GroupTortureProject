@@ -11,6 +11,10 @@ from System.logicCircuitSystem import LogicCircuitSystem
 
 
 class Test(TestCase):
+    """
+    Description:
+    First tester class testing for outputs of components, valueErrors and outputting textfile required.
+    """
     def test_output(self):
 
         andGate = Gates("AND0", "AND")
@@ -101,31 +105,47 @@ class Test(TestCase):
         # testing switch value error
         with pytest.raises(ValueError):
 
-            andGate = Gates("AND0", "AND")
-            self.assertRaises(ValueError, andGate, andGate.Output([1, None])) #testing for none error
+            csntObj = const("Cst", 70)
+            self.assertRaises(ValueError, csntObj, csntObj.result)  # testing for none error
 
-            andGate = Gates("OR0", "OR")
-            self.assertRaises(ValueError, andGate, andGate.Output([1])) #testing for none error
+            csntObj = const("Cst", None)
+            self.assertRaises(ValueError, csntObj, csntObj.result)  # testing for none error
+
+            clkObj = const("Clk", 46)
+            self.assertRaises(ValueError, clkObj, clkObj.result)  # testing for none erro
+
+            clkObj = const("Clk", None)
+            self.assertRaises(ValueError, clkObj, clkObj.result)  # testing for none error
+
+            andGate = Gates("AND0", "AND")
+            self.assertRaises(ValueError, andGate, andGate.Output([1, None])," 'AND' Gate must have two binary inputs") #testing for none error
+
+            orGate = Gates("OR0", "OR")
+            self.assertRaises(ValueError, orGate, orGate.Output([1])," 'OR' Gate must have two binary inputs") #testing for none error
 
             nandGate = Gates("NAND0", "NAND")
-            self.assertRaises(ValueError, nandGate, nandGate.Output([1, 0, 1, 0])) #testing for size error
+            self.assertRaises(ValueError, nandGate, nandGate.Output([1, 0, 1, 0]),"NandGate cannot have more than two inputs") #testing for size error
 
             norGate = Gates("NOR0", "NOR")
-            self.assertRaises(ValueError, norGate, norGate.Output([1, 1, 1, 1, 1 , 1])) #testing for size error
+            self.assertRaises(ValueError, norGate, norGate.Output([1, 1, 1, 1, 1 , 1]),"NorGate cannot have more than two inputs") #testing for size error
 
             # testing for switch errors
             switchObj = switch("Switch0")
             self.assertRaises(ValueError, switchObj, switchObj.Output(
-                [10100, 100101, 1566, 10010, 11010, 10101]))  # Assertion error because of three or more inputs
+                [10100, 100101, 1566, 10010, 11010, 10101]),"Switch cannot have more than three inputs")  # Assertion error because of three or more inputs
 
             # #testing Value error
             muxObject = Mux("Mux0")  # mux obj
             self.assertRaises(ValueError, muxObject, muxObject.Output(
-                [[1010], [11110111], [1000101], [100010111], 2, 3]))  # Assertion error because of three or more inputs
+                [[1010], [11110111], [1000101], [100010111], 2, 3], "Mux selection must be binary"))  # Assertion error because of three or more inputs
+
+            invObj = Inverter("Inv0")
+            self.assertRaises(ValueError, invObj, invObj.Output(None), "Value cannot be none ")
+
 
     def test_Sys(self):  # this test creates a textfile that Simulates the System.
 
-        a = const("Cst1", 0)
+        a = const("Cst1", 1)
         f = Gates("AND1", "AND")
         g = Gates("OR1", "NOR")
         c = clock("clk0", 0)
@@ -145,15 +165,14 @@ class Test(TestCase):
                            c: [],
                            g: [a, c],
                            l: [],
-                           e: [c, a, b],
+                           e: [a],
                            i: [a, c, b, e, a, b, j, n],
                            d: [a, l, c, l, a, a, c, c],
-                           e: [],
                            f: [b, c],
                            h: [e, a, c, l, b, c, e, n],
                            j: [d, i, h, e, b, l],
                            k: [j, g],
-                           m: [i, d, c]
+                           m: [i, d, b]
                            }
         Test_Sys = LogicCircuitSystem(connection_dict, 7)
         print(Test_Sys.network_dict)

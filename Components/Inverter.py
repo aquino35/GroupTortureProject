@@ -10,12 +10,33 @@ from Components.BaseComponent import BaseComponent
 # Creating a class for the components: inverter
 class Inverter(BaseComponent):
     """
-    This is the Inverter digital component. This class will take a given binary
-    input an return the inverted value.
+        Description:
+        This is the Inverter component class of the digital system.
+        This class will take a given binary input an return the inverted value.
+        ValueErrors: An Inverter Object input cannot be none.
     """
     def __init__(self, name):
         super().__init__(name)
 
     def Output(self, input):
+        self.checked = False
+        self.checkInputErrors(input)
         self.result = int(not (input))
         return self.result
+
+    def checkInputErrors(self, input):
+        """
+            Description:
+            Checks if input value is binary and not any other other number (including none).
+            :parameter (input): Value to be checked.
+        """
+        if not self.checked:
+            if input == None:
+                raise ValueError(f'{self.name} object can only be instantiated with a binary value')
+            else:
+                self.checked = True
+
+
+
+
+
