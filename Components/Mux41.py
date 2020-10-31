@@ -4,7 +4,7 @@ Created on Wed Sep  9 22:58:59 2020
 
 @author: juang
 """
-from GroupTortureProject.Components.BaseComponent import BaseComponent
+from Components.BaseComponent import BaseComponent
 
 
 class Mux(BaseComponent):

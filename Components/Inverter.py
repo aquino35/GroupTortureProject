@@ -5,7 +5,7 @@ Created on Thu Aug 20 13:25:28 2020
 
 @author: judragon
 """
-from GroupTortureProject.Components.BaseComponent import BaseComponent
+from Components.BaseComponent import BaseComponent
 
 # Creating a class for the components: inverter
 class Inverter(BaseComponent):

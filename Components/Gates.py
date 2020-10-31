@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from GroupTortureProject.Components.BaseComponent import BaseComponent
+from Components.BaseComponent import BaseComponent
 class Gates(BaseComponent):
     """
     This is the digital Gate component class. Its job simulate the components:
@@ -33,32 +33,40 @@ class Gates(BaseComponent):
         super().__init__(name)
         self.checked = False
         self.gates = gates
-        self.checkInputErrors(gates)
+        #self.checkInputErrors(gates)
         self.InitiateGate()
 
     def Output(self, inputs):
+
         #if not self.result == None:
-            self.checkInputErrors(inputs)
-            # This will return the value of the desired component from the inputs placed
-            result = Gates.Truth_Table[self.gates][inputs[0] + inputs[1]]
-            # For the and, or , xor gates, for more than two inputs, used this lopp to calculate the
-            # values
-            for increased_num in range(2, len(inputs)):
-                result = Gates.Truth_Table[self.gates][result + inputs[increased_num]]
-            self.result = result
-            return result
+        self.checked = False
+        self.checkInputErrors(inputs)
+        # This will return the value of the desired component from the inputs placed
+        result = Gates.Truth_Table[self.gates][inputs[0] + inputs[1]]
+        # For the and, or , xor gates, for more than two inputs, used this lopp to calculate the
+        # values
+        for increased_num in range(2, len(inputs)):
+            result = Gates.Truth_Table[self.gates][result + inputs[increased_num]]
+        self.result = result
+        return result
 
     def checkInputErrors(self, inputs):
-        # Checks once if the gate has the correct amount of inputs
-        inputSet = set(inputs)
-        if None in inputSet:
-            raise ValueError("A Gate object cannot have 'None' input values")
+
         if not self.checked:
+            # Checks once if the gate has the correct amount of inputs
+            inputSet = set(inputs)
+            if None in inputSet:
+                raise ValueError("A Gate object cannot have 'None' input values")
+            # elif not (1 or 0) in inputSet:
+            #     print(inputs)
+            #     raise ValueError("A Gate object must only have binary values")
+            # elif not (1 or 0) in inputSet:
+            #     raise ValueError("sdfdfd")
             length = len(inputs)
             if length == 1:
                 raise Exception("A Gate object must have 2 or more inputs")
-            # elif length > 2 and self.gates in ["NAND", "NOR"]:
-            #     raise Exception(f'"{self.name}", which is a {self.gates} gate, cannot receive more than two inputs.')
+            elif length > 2 and self.gates in ["NAND", "NOR"]:
+                raise Exception(f'"{self.name}", which is a {self.gates} gate, cannot receive more than two inputs.')
             else:
                 self.checked = True
 
