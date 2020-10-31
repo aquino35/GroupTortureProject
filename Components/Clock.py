@@ -13,6 +13,7 @@ class clock(BaseComponent):
         This is the clock class of the digital component.
         The class receives a binary value and flips it depending
         on the function call.
+        ValueErrors: A Clock Object must be instantiated with a binary value
     """
     def __init__(self, name, input):
         """

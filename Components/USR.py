@@ -6,6 +6,8 @@ class usr(BaseComponent):
         Description:
         The following class simulates the electrical component Universal Shift Register (USR)
         Its job is too ..
+        ValueErrors: A USR Object must have 8 input values
+
 
     """
 

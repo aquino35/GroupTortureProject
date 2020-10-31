@@ -82,8 +82,7 @@ class LogicCircuitSystem():
             self.textFile.writelines(f'\n')
             for dig_comp in self.ordered_network_list:  # dig_comp = digital component
                 input_list = []
-                for dig_comp_in in self.network_dict[
-                    dig_comp]:  # This loops gathers the necessary inputs for the current component
+                for dig_comp_in in self.network_dict[dig_comp]:  # This loops gathers the necessary inputs for the current component
                     input_list.append(dig_comp_in.result)
                 dig_comp.Output(input_list)
                 self.textFile.writelines(f'{dig_comp.name} output: {dig_comp.output()}\n')

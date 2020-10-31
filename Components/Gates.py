@@ -27,6 +27,8 @@ class Gates(BaseComponent):
                             0 1 2
                               ^
                         result = 1
+        ValueErrors || Exceptions: A Gate Object cannot have none values in the output. Also all Gate must have more
+        than one binary input and more specifically 'NAND' and 'NOR' Gates must have exactly two binary inputs.
     """
 
     def __init__(self, name, gates):

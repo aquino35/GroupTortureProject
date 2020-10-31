@@ -16,7 +16,9 @@ class switch(BaseComponent):
         For the values of input [0,1,2] the input[2] == 1 is open, however if input[2] == 0 is closed.
 
         If it only receives 1 input making a case of a open-closed, then only 1 output
-        is only sent. The one that is closed should deliver the previous value back
+        is only sent. The one that is closed should deliver the previous value back.
+        ValueErrors: A Switch Object must have at least three inputs.
+
     """
 
     def __init__(self, name):

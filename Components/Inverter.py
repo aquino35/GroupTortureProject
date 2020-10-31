@@ -13,6 +13,7 @@ class Inverter(BaseComponent):
         Description:
         This is the Inverter component class of the digital system.
         This class will take a given binary input an return the inverted value.
+        ValueErrors: An Inverter Object input cannot be none.
     """
     def __init__(self, name):
         super().__init__(name)

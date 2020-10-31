@@ -12,6 +12,7 @@ class Mux(BaseComponent):
         Description:
         This the Mux component class of the  digital system.
         Its objective is to return a given output depending on  the giving selection.
+        ValueErrors: A MUX Object must have 6 input values and its selection has to be binary
     """
 
     def __init__(self, name):
@@ -30,13 +31,13 @@ class Mux(BaseComponent):
         elif self.inputs_sec == [0, 1]: self.result = self.inputs[1]
         elif self.inputs_sec == [1, 0]: self.result = self.inputs[2]
         elif self.inputs_sec == [1, 1]: self.result = self.inputs[3]
-        else: raise ValueError("Parameters are not well inputted")
+        else: raise ValueError("Selection has to be binary")
         return self.result
 
     def checkInputErrors(self, inputs):
         if not self.checked:
             length = len(inputs)
             if length < 6 or length > 6:
-                raise Exception("A Mux object must have 6 inputs")
+                raise ValueError("A Mux object must have 6 inputs")
             else:
                 self.checked = True

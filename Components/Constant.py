@@ -13,6 +13,7 @@ class const(BaseComponent):
         Description:
         This is the constant class of the digital component.
         This class will take a given input and return the same value.
+        ValueErrors: A Clock Object must be instantiated with a binary value
     """
     def __init__(self, name, output):
         """
