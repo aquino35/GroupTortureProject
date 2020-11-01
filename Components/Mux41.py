@@ -20,6 +20,13 @@ class Mux(BaseComponent):
         self.checked = False
 
     def Output(self, inputs):
+        """
+        Description:
+        From the input, the values from the first postion of the list to the fourth represent the new incoming values.
+        While the last two values of the list is used to select which values of the incoming list is the output
+
+
+        """
         self.checked = False
         self.checkInputErrors(inputs)
         self.inputs = inputs[0:4]
