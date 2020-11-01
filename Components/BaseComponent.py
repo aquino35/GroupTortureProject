@@ -9,9 +9,8 @@ Created on Wed Sep  2 23:36:37 2020
 class BaseComponent:
     """
         Description:
-        The idea of this class is to have a base component so that we can
-        use to inheritance to inherit key attributes and functions that go
-        inside all the components.
+        The idea of this class is to have a base component that has the same attributes and functions
+        across all of the components so we can build more advanced components using inheritance.
     """
     def __init__(self, name):
         """
@@ -25,7 +24,7 @@ class BaseComponent:
         """
             Description:
             Turns object reference into string name.
-            @:return (name) : a string that represents the instance of each component.
+            @:return (name) : A string that represents the instance of each component.
         """
         return self.name
 
@@ -33,7 +32,8 @@ class BaseComponent:
         """
             Description:
             :parameter (output) : A binary number or list that will feed into the System.
-            :return (output) : the parameter output.
+            :return (output) : The parameter output.
+            Note that each component has a unique way of processing its binary input.
         """
         output = self.result
         return output

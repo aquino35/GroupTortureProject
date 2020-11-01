@@ -175,4 +175,11 @@ class Test(TestCase):
                            m: [i, d, b]
                            }
         Test_Sys = LogicCircuitSystem(connection_dict, 7)
+        print(a.__doc__)
+        print(c.__doc__)
+        print(d.__doc__)
+        print(e.__doc__)
+        print(f.__doc__)
+        print(j.__doc__)
+        print(m.__doc__)
         print(Test_Sys.network_dict)

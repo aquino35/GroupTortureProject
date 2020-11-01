@@ -10,15 +10,15 @@ from Components.BaseComponent import BaseComponent
 class clock(BaseComponent):
     """
         Description:
-        This is the clock class of the digital component.
-        The class receives a binary value and flips it depending
-        on the function call.
-        ValueErrors: A Clock Object must be instantiated with a binary value
+        This is the clock component class of the digital system.
+        The class receives a binary value and
+        flips it depending on the function call.
+        ValueErrors: A Clock Object must be instantiated with a binary value.
     """
     def __init__(self, name, input):
         """
             Description
-            :parameter (input) : value that will be flipped.
+            :parameter (input) : Value that will be flipped.
         """
         super().__init__(name)
         # self.Output()

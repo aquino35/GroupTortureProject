@@ -53,7 +53,6 @@ class Gates(BaseComponent):
         return result
 
     def checkInputErrors(self, inputs):
-
         if not self.checked:
             # Checks once if the gate has the correct amount of inputs
             inputSet = set(inputs)
