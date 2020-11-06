@@ -70,7 +70,7 @@ class usr(BaseComponent):
         input1.insert(0, input2)
         self.result = input1.pop()
 
-    def output(self):
+    def get_result(self):
         return self.result, 'Current Registry:', self.interior_seq
 
     def checkInputErrors(self, inputs):

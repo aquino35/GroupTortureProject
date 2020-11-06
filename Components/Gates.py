@@ -80,5 +80,5 @@ class Gates(BaseComponent):
             Gates.Truth_Table = {"AND": [0, 0, 1], "OR": [0, 1, 1], "XOR": [0, 1, 0], "NAND": [1, 1, 0],
                                  "NOR": [1, 0, 0]}
 
-    def output(self):
+    def get_result(self):
         return self.result

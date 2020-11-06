@@ -7,11 +7,11 @@ Created on Fri Oct  9 18:50:14 2020
 """
 class LogicCircuitSystem():
     """
-        Description:
-        This class is defined as The Logic Circuit System Simulator. Its job is to simulate a digital system
-        that runs  numerous amounts of connected components. The class needs a connection dictionary with the
-        given components and the number of runs the user wants to simulate. The system will also take the
-        connection dictionary and establish a proper order consisting on any dependency the components has.
+        Initialize the Digital Logic Circuit System:
+        Its job is to simulate a digital system that runs  numerous amounts of connected components.
+        The class needs a connection dictionary with the given components and the number of runs the user wants
+        to simulate. The system will also take the connection dictionary and establish a proper order consisting
+        on any dependency the components has.
     """
 
     def __init__(self, layered_comp_list, num_of_runs):
@@ -74,7 +74,7 @@ class LogicCircuitSystem():
         self.textFile.writelines(f'Run 0: \n')
         self.textFile.writelines(f'\n')
         for dig_comp in self.ordered_network_list:  # This loop gathers all initial values for the text file
-            self.textFile.writelines(f'{dig_comp.name} output: {dig_comp.output()}\n')
+            self.textFile.writelines(f'{dig_comp.name} output: {dig_comp.get_result()}\n')
         self.textFile.writelines("-----------------------------------------------------------------------\n")
         run_count = 1
         while run_count != self.run_max:
@@ -85,7 +85,7 @@ class LogicCircuitSystem():
                 for dig_comp_in in self.network_dict[dig_comp]:  # This loops gathers the necessary inputs for the current component
                     input_list.append(dig_comp_in.result)
                 dig_comp.Output(input_list)
-                self.textFile.writelines(f'{dig_comp.name} output: {dig_comp.output()}\n')
+                self.textFile.writelines(f'{dig_comp.name} output: {dig_comp.get_result()}\n')
             run_count += 1
             self.textFile.writelines("-----------------------------------------------------------------------\n")
         self.textFile.writelines("                         END OF SIMULATION             \n")

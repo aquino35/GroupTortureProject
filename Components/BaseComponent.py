@@ -38,7 +38,7 @@ class BaseComponent:
         output = self.result
         return output
 
-    def output(self):
+    def get_result(self):
         """
             Description:
             This function is used to represent the output of each component in the output textfile.
