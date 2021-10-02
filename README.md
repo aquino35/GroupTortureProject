@@ -1,4 +1,4 @@
-A group torture project designed by Yousef Salaman
+A Logic Circuit Simulator designed by Yousef Salaman
 
 Project Description:
 
@@ -30,7 +30,6 @@ Project Goals:
 
 7.   Planning and structuring the code, so it does not look like a total mess.
 
-8.   Not killing Yousef when this is all over.
 
 Project tasks:
 
